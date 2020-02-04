@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import LandingPage from "../../routes/LandingPage/LandingPage";
+import "./App.css";
 
 export default class App extends Component {
   render() {

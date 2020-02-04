@@ -1,0 +1,24 @@
+.Header {
+  height: 40px;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+}
+
+.Header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.Header h1 a {
+  text-decoration: none;
+}
+
+.Header a {
+  color: #444;
+}
+
+.Header__not-logged-in {
+  display: flex;
+  flex-direction: column;
+}
