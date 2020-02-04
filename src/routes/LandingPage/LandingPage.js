@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import { Section } from "../../components/Utils/Utils";
 import "./LandingPage.css";
 
 export default class LandingPage extends Component {
   render() {
     return (
-      <div className="LandingPage">
-        <section>
+      <Section className="LandingPage">
+        <div className="login">
           <h3>Login Here</h3>
           <LoginForm />
-        </section>
-        <section>
+        </div>
+        <div className="description">
           <h3>See game reviews from your own peers</h3>
           <img
             href="placeholder.jpg"
@@ -24,8 +25,8 @@ export default class LandingPage extends Component {
             common player can learn about a game from other players like
             themselves.
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="description">
           <h3>Add any game to get reviewed</h3>
           <img
             href="placeholder.jpg"
@@ -38,8 +39,8 @@ export default class LandingPage extends Component {
             people who have played the game and want to share their experience
             with others.
           </p>
-        </section>
-      </div>
+        </div>
+      </Section>
     );
   }
 }

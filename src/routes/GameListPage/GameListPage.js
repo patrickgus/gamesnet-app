@@ -1,0 +1,24 @@
+import React, { Component } from "react";
+import GameListContext from "../../contexts/GameListContext";
+
+export default class GameListPage extends Component {
+  static contextType = GameListContext;
+
+  renderGames() {
+    const { gameList = [] } = this.context;
+    return gameList.map(game => <GameListItem key={game.id} game={game} />);
+  }
+
+  render() {
+    const { error } = this.context;
+    return (
+      <ul className="GameList">
+        {error ? (
+          <p className="red">There was an error, try again</p>
+        ) : (
+          this.renderGames()
+        )}
+      </ul>
+    );
+  }
+}

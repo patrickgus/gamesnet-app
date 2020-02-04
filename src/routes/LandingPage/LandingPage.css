@@ -1,9 +1,9 @@
-section {
+.login, .description {
   min-height: 200px;
   padding: 15px 20px;
   background-color: #bbb;
 }
 
-section:nth-child(even) {
+.login {
   background-color: #ddd;
 }

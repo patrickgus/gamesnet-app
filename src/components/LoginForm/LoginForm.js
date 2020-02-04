@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Input } from "../Utils/Utils";
 
 export default class LoginForm extends Component {
   render() {
@@ -6,7 +7,7 @@ export default class LoginForm extends Component {
       <form className="LoginForm">
         <div className="user_name">
           <label htmlFor="LoginForm__username">Username</label>
-          <input
+          <Input
             type="text"
             name="username"
             id="LoginForm__username"
@@ -15,14 +16,14 @@ export default class LoginForm extends Component {
         </div>
         <div className="password">
           <label htmlFor="LoginForm__password">Password</label>
-          <input
+          <Input
             name="password"
             type="password"
             id="LoginForm__password"
             value="test123"
           />
         </div>
-        <button type="submit">Login</button>
+        <Button type="submit">Login</Button>
       </form>
     );
   }

@@ -22,3 +22,7 @@
   display: flex;
   flex-direction: column;
 }
+
+.Header__not-logged-in .Hyph {
+  display: none;
+}
