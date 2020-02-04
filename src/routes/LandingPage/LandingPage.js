@@ -20,6 +20,10 @@ export default class LandingPage extends Component {
     return (
       <div className="LandingPage">
         <section>
+          <h3>Login Here</h3>
+          <LoginForm />
+        </section>
+        <section>
           <h3>See game reviews from your own peers</h3>
           <img
             href="placeholder.jpg"
@@ -47,10 +51,6 @@ export default class LandingPage extends Component {
             people who have played the game and want to share their experience
             with others.
           </p>
-        </section>
-        <section>
-          <h3>Welcome to GamesNet</h3>
-          <LoginForm />
         </section>
       </div>
     );
