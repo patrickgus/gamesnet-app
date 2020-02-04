@@ -3,19 +3,6 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import "./LandingPage.css";
 
 export default class LandingPage extends Component {
-  static defaultProps = {
-    location: {},
-    history: {
-      push: () => {}
-    }
-  };
-
-  handleLoginSuccess = () => {
-    const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/games";
-    history.push(destination);
-  };
-
   render() {
     return (
       <div className="LandingPage">
