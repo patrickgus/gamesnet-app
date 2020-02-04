@@ -39,6 +39,7 @@ export default class RegistrationForm extends Component {
           />
         </div>
         <Button type="submit">Register</Button>
+        <Button>Cancel</Button>
       </form>
     );
   }
