@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import GameListContext from "../../contexts/GameListContext";
+import { Section } from "../../components/Utils/Utils";
+import GameListItem from "../../components/GameListItem/GameListItem";
 
 export default class GameListPage extends Component {
   static contextType = GameListContext;
@@ -12,13 +14,13 @@ export default class GameListPage extends Component {
   render() {
     const { error } = this.context;
     return (
-      <ul className="GameList">
+      <Section list className="GameList">
         {error ? (
           <p className="red">There was an error, try again</p>
         ) : (
           this.renderGames()
         )}
-      </ul>
+      </Section>
     );
   }
 }
