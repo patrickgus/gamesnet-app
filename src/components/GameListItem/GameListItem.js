@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Section } from "../../components/Utils/Utils";
+import "./GameListItem.css";
 
 export default class GameListItem extends Component {
   render() {
