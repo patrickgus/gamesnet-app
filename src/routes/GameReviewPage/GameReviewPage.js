@@ -23,6 +23,7 @@ export default class GameReviewPage extends Component {
   renderGame() {
     const { game } = this.context;
     const { gameId } = this.props.match.params;
+    
     return (
       <>
         <header className="GameReviewPage__header">
@@ -46,8 +47,8 @@ export default class GameReviewPage extends Component {
   render() {
     const { error, game } = this.context;
     const { gameId } = this.props.match.params;
-    console.log(game[gameId - 1].id);
     let content;
+
     if (error) {
       content =
         error.error === `Game doesn't exist` ? (
