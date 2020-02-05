@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import gameList from "../dummy-store";
 
 const GameListContext = React.createContext({
-  gameList: [],
+  gameList,
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -12,7 +13,7 @@ export default GameListContext;
 
 export class GameListProvider extends Component {
   state = {
-    gameList: [],
+    gameList,
     error: null
   };
 
