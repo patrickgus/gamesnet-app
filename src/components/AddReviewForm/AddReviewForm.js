@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Required, Textarea, Button } from "../../components/Utils/Utils";
+import "./AddReviewForm.css";
 
 export default class AddReviewForm extends Component {
   render() {
