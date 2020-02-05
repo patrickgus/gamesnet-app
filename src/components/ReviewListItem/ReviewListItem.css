@@ -1,0 +1,9 @@
+.ReviewListItem {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #bbb;
+}
+
+.ReviewListItem:nth-child(even) {
+  background-color: #ddd;
+}
