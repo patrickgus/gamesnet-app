@@ -1,3 +1,14 @@
 img {
   width: 250px
 }
+
+.GameListItem {
+  margin: 0;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #bbb;
+}
+
+.GameListItem:nth-child(even) {
+  background-color: #ddd;
+}

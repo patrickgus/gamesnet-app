@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import GameListContext from "../../contexts/GameListContext";
 import { Section } from "../../components/Utils/Utils";
 import GameListItem from "../../components/GameListItem/GameListItem";
+import "./GameListPage.css";
 
 export default class GameListPage extends Component {
   static contextType = GameListContext;
