@@ -14,7 +14,7 @@ export default class LandingPage extends Component {
         <div className="description">
           <h3>See game reviews from your own peers</h3>
           <img
-            href="placeholder.jpg"
+            src="placeholder.jpg"
             alt="placehoder for screenshot of game list page"
           />
           <p>
@@ -29,7 +29,7 @@ export default class LandingPage extends Component {
         <div className="description">
           <h3>Add any game to get reviewed</h3>
           <img
-            href="placeholder.jpg"
+            src="placeholder.jpg"
             alt="placehoder for screenshot of game review page"
           />
           <p>

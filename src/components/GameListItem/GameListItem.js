@@ -12,7 +12,7 @@ export default class GameListItem extends Component {
           <Link to={`/games/${game.id}`} className="GameListItem__link">
             <h2 className="GameListItem__heading">{game.title}</h2>
           </Link>
-          <img href={game.cover} alt={`Game cover art for ${game.title}`} />
+          <img src={game.cover} alt={`Game cover art for ${game.title}`} />
           <p>Avg Rating: {game.avg_rating}</p>
         </header>
         <div className="gameInfo">
