@@ -4,6 +4,10 @@ import { Section } from "../../components/Utils/Utils";
 import ReviewList from "../../components/ReviewList/ReviewList";
 
 export default class GameReviewPage extends Component {
+  static defaultProps = {
+    match: { params: {} },
+  }
+
   static contextType = GameContext;
 
   componentDidMount() {
@@ -16,12 +20,13 @@ export default class GameReviewPage extends Component {
 
   renderGame() {
     const { game } = this.context;
+    // const { gameId } = this.props.match.params
     return (
       <>
         <header className="GameReviewPage__header">
-          <h2 className="GameReviewPage__heading">{game.title}</h2>
-          <img href={game.cover} alt={`Game cover art for ${game.title}`} />
-          <p>Avg Rating: {game.avg_rating}</p>
+          <h2 className="GameReviewPage__heading">{game[0].title}</h2>
+          <img href={game[0].cover} alt={`Game cover art for ${game[0].title}`} />
+          <h4>Avg Rating: {game[0].avg_rating}</h4>
         </header>
         <ReviewList />
       </>
@@ -33,7 +38,7 @@ export default class GameReviewPage extends Component {
     let content;
     if (error) {
       content =
-        error.error === `Article doesn't exist` ? (
+        error.error === `Game doesn't exist` ? (
           <p className="red">Game not found</p>
         ) : (
           <p className="red">There was an error</p>
