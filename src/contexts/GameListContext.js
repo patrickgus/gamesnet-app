@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import gameList from "../dummy-store";
+import gameList from "../stores/game-store";
 
 const GameListContext = React.createContext({
   gameList,

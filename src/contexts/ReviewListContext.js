@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import reviewList from "../review-store";
+import reviewList from "../stores/review-store";
 
 const ReviewListContext = React.createContext({
   reviewList,

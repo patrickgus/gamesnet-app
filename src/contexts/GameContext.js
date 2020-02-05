@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import game from "../dummy-store";
+import game from "../stores/game-store";
 
 export const nullGame = {
   title: ""
