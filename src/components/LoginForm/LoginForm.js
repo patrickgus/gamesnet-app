@@ -1,17 +1,31 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { Button, Input } from "../Utils/Utils";
 
 export default class LoginForm extends Component {
+  state = {
+    toGameList: false
+  };
+
+  handleSubmit = () => {
+    this.setState(() => ({
+      toGameList: true
+    }));
+  };
+
   render() {
+    if (this.state.toGameList === true) {
+      return <Redirect to="/games" />;
+    }
+
     return (
-      <form className="LoginForm">
+      <form className="LoginForm" onSubmit={this.handleSubmit}>
         <div className="user_name">
           <label htmlFor="LoginForm__username">Username</label>
           <Input
             type="text"
             name="username"
             id="LoginForm__username"
-            value="test"
           />
         </div>
         <div className="password">
@@ -20,7 +34,6 @@ export default class LoginForm extends Component {
             name="password"
             type="password"
             id="LoginForm__password"
-            value="test123"
           />
         </div>
         <Button type="submit">Login</Button>
