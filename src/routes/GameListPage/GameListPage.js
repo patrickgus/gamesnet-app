@@ -6,6 +6,10 @@ import GameListItem from "../../components/GameListItem/GameListItem";
 export default class GameListPage extends Component {
   static contextType = GameListContext;
 
+  componentDidMount() {
+    this.context.clearError();
+  }
+
   renderGames() {
     const { gameList = [] } = this.context;
     return gameList.map(game => <GameListItem key={game.id} game={game} />);
