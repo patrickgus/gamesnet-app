@@ -23,7 +23,7 @@ export default class App extends Component {
             <Route path={"/games"} component={GameListPage} />
             <Route path={"/review/:gameId"} component={GameReviewPage} />
             <Route path={"/addgame"} component={AddGamePage} />
-            <Route path={"/addreview"} component={AddReviewPage} />
+            <Route path={"/addreview/:gameId"} component={AddReviewPage} />
           </Switch>
         </main>
       </div>
