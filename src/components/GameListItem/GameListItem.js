@@ -9,7 +9,7 @@ export default class GameListItem extends Component {
     return (
       <Section className="GameListItem">
         <header className="GameListItem__header">
-          <Link to={`/games/${game.id}`} className="GameListItem__link">
+          <Link to={`/review/${game.id}`} className="GameListItem__link">
             <h2 className="GameListItem__heading">{game.title}</h2>
           </Link>
           <img src={game.cover} alt={`Game cover art for ${game.title}`} />

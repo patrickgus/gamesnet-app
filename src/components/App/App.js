@@ -19,7 +19,7 @@ export default class App extends Component {
             <Route exact path={"/"} component={LandingPage} />
             <Route path={"/register"} component={RegistrationPage} />
             <Route path={"/games"} component={GameListPage} />
-            <Route path={"/review"} component={GameReviewPage} />
+            <Route path={"/review/:gameId"} component={GameReviewPage} />
           </Switch>
         </main>
       </div>
