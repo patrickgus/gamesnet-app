@@ -21,6 +21,16 @@ export default class AddGameForm extends Component {
             id="AddGameForm__game_title"
           />
         </div>
+        <div className="game_cover">
+          <label htmlFor="AddGameForm__game_cover">
+            Game cover image url
+          </label>
+          <Input
+            name="game_cover"
+            type="text"
+            id="AddGameForm__game_cover"
+          />
+        </div>
         <div className="game_description">
           <label htmlFor="AddGameForm__game_description">
             Game description <Required />
