@@ -6,6 +6,7 @@ import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import GameListPage from "../../routes/GameListPage/GameListPage";
 import GameReviewPage from "../../routes/GameReviewPage/GameReviewPage";
 import AddGamePage from "../../routes/AddGamePage/AddGamePage";
+import AddReviewPage from "../../routes/AddReviewPage/AddReviewPage";
 import "./App.css";
 
 export default class App extends Component {
@@ -22,6 +23,7 @@ export default class App extends Component {
             <Route path={"/games"} component={GameListPage} />
             <Route path={"/review/:gameId"} component={GameReviewPage} />
             <Route path={"/addgame"} component={AddGamePage} />
+            <Route path={"/addreview"} component={AddReviewPage} />
           </Switch>
         </main>
       </div>
