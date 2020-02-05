@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import GameListContext from "../../contexts/GameContext";
+import { Link } from "react-router-dom";
+import GameContext from "../../contexts/GameContext";
 import { Section } from "../../components/Utils/Utils";
 import ReviewList from "../../components/ReviewList/ReviewList";
 import "./GameReviewPage.css";
 
 export default class GameReviewPage extends Component {
   static defaultProps = {
-    match: { params: {} },
-  }
+    match: { params: {} }
+  };
 
-  static contextType = GameListContext;
+  static contextType = GameContext;
 
   componentDidMount() {
     this.context.clearError();
@@ -21,13 +22,17 @@ export default class GameReviewPage extends Component {
 
   renderGame() {
     const { game } = this.context;
-    const { gameId } = this.props.match.params
+    const { gameId } = this.props.match.params;
     return (
       <>
         <header className="GameReviewPage__header">
           <h2 className="GameReviewPage__heading">{game[gameId - 1].title}</h2>
-          <img src={game[gameId - 1].cover} alt={`Game cover art for ${game[gameId - 1].title}`} />
+          <img
+            src={game[gameId - 1].cover}
+            alt={`Game cover art for ${game[gameId - 1].title}`}
+          />
           <h4>Avg Rating: {game[gameId - 1].avg_rating}</h4>
+          <Link to={"/games"}>Back</Link>
         </header>
         <ReviewList />
       </>
@@ -36,7 +41,8 @@ export default class GameReviewPage extends Component {
 
   render() {
     const { error, game } = this.context;
-    const { gameId } = this.props.match.params
+    const { gameId } = this.props.match.params;
+    console.log(game[gameId - 1].id);
     let content;
     if (error) {
       content =
