@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import GameContext from "../../contexts/GameContext";
-import { Section } from "../../components/Utils/Utils";
+import { Section, Hyph } from "../../components/Utils/Utils";
 import ReviewList from "../../components/ReviewList/ReviewList";
 import "./GameReviewPage.css";
 
@@ -32,7 +32,11 @@ export default class GameReviewPage extends Component {
             alt={`Game cover art for ${game[gameId - 1].title}`}
           />
           <h4>Avg Rating: {game[gameId - 1].avg_rating}</h4>
-          <Link to={"/games"}>Back</Link>
+          <div className="GameReviewPage__links">
+            <Link to={`/addreview/${gameId}`}>Add a Review</Link>
+            <Hyph />
+            <Link to={"/games"}>Back</Link>
+          </div>
         </header>
         <ReviewList />
       </>
