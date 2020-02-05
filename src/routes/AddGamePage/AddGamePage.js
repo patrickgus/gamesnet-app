@@ -7,7 +7,7 @@ export default class AddGamePage extends Component {
     return (
       <Section className="AddGame">
         <header className="AddGame__header">
-          <h2>Add a Game To Be Reviewed</h2>
+          <h3>Add a Game To Be Reviewed</h3>
         </header>
         <AddGameForm />
       </Section>

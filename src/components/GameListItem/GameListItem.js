@@ -13,11 +13,11 @@ export default class GameListItem extends Component {
             <h2 className="GameListItem__heading">{game.title}</h2>
           </Link>
           <img src={game.cover} alt={`Game cover art for ${game.title}`} />
-          <p>Avg Rating: {game.avg_rating}</p>
+          <h4>Avg Rating: {game.avg_rating}</h4>
         </header>
         <div className="gameInfo">
           <h4>Description</h4>
-          {game.description}
+          <p>{game.description}</p>
           <p>Rated: {game.rated}</p>
           <p>Platforms: {game.platforms}</p>
         </div>

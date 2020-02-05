@@ -22,7 +22,11 @@ h6 {
 }
 
 p {
-  color: #555;
+  color: rgb(49, 49, 49);
+}
+
+label {
+  font-size: 18px;
 }
 
 .blue {

@@ -7,7 +7,7 @@ export default class AddReviewPage extends Component {
     return (
       <Section className="AddReview">
         <header className="AddReview__header">
-          <h2>Add a Review</h2>
+          <h3>Add a Review</h3>
         </header>
         <AddReviewForm />
       </Section>
