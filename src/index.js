@@ -6,12 +6,15 @@ import App from "./components/App/App";
 import "./index.css";
 import { GameListProvider } from "./contexts/GameListContext";
 import { GameProvider } from "./contexts/GameContext";
+import { ReviewListProvider } from "./contexts/ReviewListContext";
 
 ReactDOM.render(
   <BrowserRouter>
     <GameListProvider>
       <GameProvider>
-        <App />
+        <ReviewListProvider>
+          <App />
+        </ReviewListProvider>
       </GameProvider>
     </GameListProvider>
   </BrowserRouter>,
