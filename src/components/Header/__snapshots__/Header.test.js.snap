@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders the UI as expected 1`] = `
+<nav
+  className="Header"
+>
+  <h1>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      GamesNet
+    </a>
+  </h1>
+  <div
+    className="Header__not-logged-in"
+  >
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+    <span
+      className="Hyph"
+    >
+       - 
+    </span>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Log in
+    </a>
+  </div>
+</nav>
+`;

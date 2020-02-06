@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddGameForm component renders the form as expected 1`] = `
+<form
+  className="AddGameForm"
+>
+  <div
+    className="game_title"
+  >
+    <label
+      htmlFor="AddGameForm__game_title"
+    >
+      Game title 
+      <span
+        className="Required "
+      >
+        *
+      </span>
+    </label>
+    <input
+      className="Input "
+      id="AddGameForm__game_title"
+      name="game_title"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="game_cover"
+  >
+    <label
+      htmlFor="AddGameForm__game_cover"
+    >
+      Game cover image url
+    </label>
+    <input
+      className="Input "
+      id="AddGameForm__game_cover"
+      name="game_cover"
+      type="text"
+    />
+  </div>
+  <div
+    className="game_description"
+  >
+    <label
+      htmlFor="AddGameForm__game_description"
+    >
+      Game description 
+      <span
+        className="Required "
+      >
+        *
+      </span>
+    </label>
+    <textarea
+      aria-label="Write a brief description..."
+      className="Textarea "
+      id="AddGameForm__game_description"
+      name="game_description"
+      placeholder="Write a brief description..."
+      required={true}
+      rows="15"
+    />
+  </div>
+  <div
+    className="rated"
+  >
+    <label
+      htmlFor="AddGameForm__rated"
+    >
+      Rated 
+      <span
+        className="Required "
+      >
+        *
+      </span>
+    </label>
+    <input
+      className="Input "
+      id="AddGameForm__rated"
+      name="rated"
+      placeholder="E, T, M, etc."
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="platforms"
+  >
+    <label
+      htmlFor="AddGameForm__platforms"
+    >
+      Platforms 
+      <span
+        className="Required "
+      >
+        *
+      </span>
+    </label>
+    <input
+      className="Input "
+      id="AddGameForm__platforms"
+      name="platforms"
+      placeholder="Playstation, Xbox, PC, etc."
+      required={true}
+      type="text"
+    />
+  </div>
+  <button
+    className="Button "
+    type="submit"
+  >
+    Add Game
+  </button>
+  <button
+    className="Button "
+    onClick={[Function]}
+  >
+    Cancel
+  </button>
+</form>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewListItem component renders the item as expected 1`] = `
+<section
+  className="Section ReviewListItem"
+>
+  <h4>
+    "
+    "
+  </h4>
+  <p>
+    Rating: 
+  </p>
+  <div
+    className="reviewInfo"
+  >
+    <p />
+  </div>
+</section>
+`;

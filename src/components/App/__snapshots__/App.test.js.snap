@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App__header"
+  >
+    <nav
+      className="Header"
+    >
+      <h1>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          GamesNet
+        </a>
+      </h1>
+      <div
+        className="Header__not-logged-in"
+      >
+        <a
+          href="/register"
+          onClick={[Function]}
+        >
+          Register
+        </a>
+        <span
+          className="Hyph"
+        >
+           - 
+        </span>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Log in
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main
+    className="App__main"
+  >
+    <section
+      className="Section LandingPage"
+    >
+      <div
+        className="login"
+      >
+        <h3>
+          Login Here
+        </h3>
+        <form
+          className="LoginForm"
+          onSubmit={[Function]}
+        >
+          <div
+            className="user_name"
+          >
+            <label
+              htmlFor="LoginForm__username"
+            >
+              Username
+            </label>
+            <input
+              className="Input "
+              id="LoginForm__username"
+              name="username"
+              type="text"
+            />
+          </div>
+          <div
+            className="password"
+          >
+            <label
+              htmlFor="LoginForm__password"
+            >
+              Password
+            </label>
+            <input
+              className="Input "
+              id="LoginForm__password"
+              name="password"
+              type="password"
+            />
+          </div>
+          <button
+            className="Button "
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+      <div
+        className="description"
+      >
+        <h3>
+          See game reviews from your own peers
+        </h3>
+        <p>
+          Video games can get quite expensive and some take a significant investment of time to play. Knowing which game to buy can be a challenge because no one likes wasting money on a game they play once and then never touch again. GamesNet is a place where the common player can learn about a game from other players like themselves.
+        </p>
+      </div>
+      <div
+        className="description"
+      >
+        <h3>
+          Add any game to get reviewed
+        </h3>
+        <p>
+          From video games to board games, any user will be able to add any kind of game so that it can be rated and reviewed by other users. This is not a official review of a game but rather the opinions of people who have played the game and want to share their experience with others.
+        </p>
+      </div>
+    </section>
+  </main>
+</div>
+`;

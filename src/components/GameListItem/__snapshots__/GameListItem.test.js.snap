@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameListItem component renders the item as expected 1`] = `
+<section
+  className="Section GameListItem"
+>
+  <header
+    className="GameListItem__header"
+  >
+    <a
+      className="GameListItem__link"
+      href="/review/undefined"
+      onClick={[Function]}
+    >
+      <h2
+        className="GameListItem__heading"
+      />
+    </a>
+    <img
+      alt="Game cover art for undefined"
+    />
+    <h4>
+      Avg Rating: 
+    </h4>
+  </header>
+  <div
+    className="gameInfo"
+  >
+    <h4>
+      Description
+    </h4>
+    <p />
+    <p>
+      Rated: 
+    </p>
+    <p>
+      Platforms: 
+    </p>
+  </div>
+</section>
+`;

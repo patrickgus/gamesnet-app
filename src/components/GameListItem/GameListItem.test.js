@@ -2,25 +2,26 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import renderer from "react-test-renderer";
-import App from "./App";
+import GameListItem from "./GameListItem";
+import game from "../../stores/game-store";
 
-describe("App component", () => {
+describe("GameListItem component", () => {
   it("renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(
       <BrowserRouter>
-        <App />
+        <GameListItem game={game} />
       </BrowserRouter>,
       div
     );
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it("renders the UI as expected", () => {
+  it("renders the item as expected", () => {
     const tree = renderer
       .create(
         <BrowserRouter>
-          <App />
+          <GameListItem game={game} />
         </BrowserRouter>
       )
       .toJSON();
