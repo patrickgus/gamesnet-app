@@ -6,10 +6,6 @@ import ReviewListContext from "../../contexts/ReviewListContext";
 export default class ReviewList extends Component {
   static contextType = ReviewListContext;
 
-  componentDidMount() {
-    this.context.clearError()
-  }
-
   renderReviews() {
     const { reviewList = [] } = this.context;
     return reviewList.map(review => (
