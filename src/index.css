@@ -12,6 +12,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  width: 250px
+}
+
 h1,
 h2,
 h3,
@@ -27,6 +31,10 @@ p {
 
 label {
   font-size: 18px;
+}
+
+a {
+  color: rgb(49, 49, 49);
 }
 
 .blue {
