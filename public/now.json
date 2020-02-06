@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "patrickgus-gamesnet-app",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}
