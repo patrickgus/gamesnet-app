@@ -12,18 +12,9 @@ export default class GameReviewPage extends Component {
 
   static contextType = GameContext;
 
-  componentDidMount() {
-    this.context.clearError();
-  }
-
-  componentWillUnmount() {
-    this.context.clearGame();
-  }
-
   renderGame() {
     const { game } = this.context;
     const { gameId } = this.props.match.params;
-    
     return (
       <>
         <header className="GameReviewPage__header">
