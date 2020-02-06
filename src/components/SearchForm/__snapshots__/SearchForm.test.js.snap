@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm component renders the form as expected 1`] = `
+<form
+  className="searchBarNav"
+>
+  <label
+    htmlFor="search"
+  >
+    Search: 
+  </label>
+  <input
+    id="search"
+    name="search"
+    type="text"
+  />
+  <label
+    htmlFor="sort"
+  >
+    Sort: 
+  </label>
+  <select
+    id="sort"
+    name="sort"
+  >
+    <option
+      value="title"
+    >
+      Title
+    </option>
+    <option
+      value="rating"
+    >
+      Rating
+    </option>
+  </select>
+  <button
+    type="submit"
+  >
+    Go
+  </button>
+</form>
+`;
