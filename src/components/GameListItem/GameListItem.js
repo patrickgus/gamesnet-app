@@ -6,6 +6,7 @@ import "./GameListItem.css";
 export default class GameListItem extends Component {
   render() {
     const { game } = this.props;
+    console.log(game);
     return (
       <Section className="GameListItem">
         <header className="GameListItem__header">
