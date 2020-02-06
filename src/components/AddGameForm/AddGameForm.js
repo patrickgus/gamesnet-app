@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import {
   Input,
   Required,
@@ -7,7 +8,21 @@ import {
 } from "../../components/Utils/Utils";
 
 export default class AddGameForm extends Component {
+  state = {
+    toGameList: false
+  };
+
+  handleCancel = () => {
+    this.setState(() => ({
+      toGameList: true
+    }));
+  };
+
   render() {
+    if (this.state.toGameList === true) {
+      return <Redirect to="/games" />;
+    }
+
     return (
       <form className="AddGameForm" onSubmit={this.handleSumbit}>
         <div className="game_title">
@@ -69,7 +84,7 @@ export default class AddGameForm extends Component {
           />
         </div>
         <Button type="submit">Add Game</Button>
-        <Button>Cancel</Button>
+        <Button onClick={this.handleCancel}>Cancel</Button>
       </form>
     );
   }

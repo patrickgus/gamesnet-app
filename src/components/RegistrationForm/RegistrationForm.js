@@ -1,8 +1,32 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { Button, Input, Required } from "../Utils/Utils";
 
 export default class RegistrationForm extends Component {
+  state = {
+    toGameList: false,
+    toLandingPage: false
+  };
+
+  handleSubmit = () => {
+    this.setState(() => ({
+      toGameList: true
+    }));
+  };
+
+  handleCancel = () => {
+    this.setState(() => ({
+      toLandingPage: true
+    }));
+  };
+
   render() {
+    if (this.state.toGameList === true) {
+      return <Redirect to="/games" />;
+    } else if (this.state.toLandingPage === true) {
+      return <Redirect to="/" />;
+    }
+
     return (
       <form className="RegistrationForm" onSubmit={this.handleSubmit}>
         <div className="full_name">
@@ -39,7 +63,7 @@ export default class RegistrationForm extends Component {
           />
         </div>
         <Button type="submit">Register</Button>
-        <Button>Cancel</Button>
+        <Button onClick={this.handleCancel}>Cancel</Button>
       </form>
     );
   }
