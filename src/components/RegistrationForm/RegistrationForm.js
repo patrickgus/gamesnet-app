@@ -8,7 +8,8 @@ export default class RegistrationForm extends Component {
     toLandingPage: false
   };
 
-  handleSubmit = () => {
+  handleSubmit = e => {
+    e.preventDefault();
     this.setState(() => ({
       toGameList: true
     }));

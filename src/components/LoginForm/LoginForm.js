@@ -7,7 +7,8 @@ export default class LoginForm extends Component {
     toGameList: false
   };
 
-  handleSubmit = () => {
+  handleSubmit = e => {
+    e.preventDefault();
     this.setState(() => ({
       toGameList: true
     }));
