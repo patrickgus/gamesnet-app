@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "alias": "patrickgus-gamesnet-app",
   "name": "gamesnet-app",
   "routes": [
       { "handle": "filesystem" },
