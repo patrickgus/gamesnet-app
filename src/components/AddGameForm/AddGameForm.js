@@ -12,7 +12,8 @@ export default class AddGameForm extends Component {
     toGameList: false
   };
 
-  handleCancel = () => {
+  handleCancel = e => {
+    e.preventDefault();
     this.setState(() => ({
       toGameList: true
     }));

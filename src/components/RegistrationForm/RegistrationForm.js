@@ -15,7 +15,8 @@ export default class RegistrationForm extends Component {
     }));
   };
 
-  handleCancel = () => {
+  handleCancel = e => {
+    e.preventDefault();
     this.setState(() => ({
       toLandingPage: true
     }));
