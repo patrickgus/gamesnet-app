@@ -4,19 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import App from "./components/App/App";
 import "./index.css";
-import { GameListProvider } from "./contexts/GameListContext";
-import { GameProvider } from "./contexts/GameContext";
-import { ReviewListProvider } from "./contexts/ReviewListContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <GameListProvider>
-      <GameProvider>
-        <ReviewListProvider>
-          <App />
-        </ReviewListProvider>
-      </GameProvider>
-    </GameListProvider>
+    <App />
   </BrowserRouter>,
   document.getElementById("root")
 );

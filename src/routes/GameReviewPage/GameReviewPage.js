@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import GameContext from "../../contexts/GameContext";
 import { Section, Hyph } from "../../components/Utils/Utils";
 import ReviewList from "../../components/ReviewList/ReviewList";
+import game from "../../stores/game-store";
 import "./GameReviewPage.css";
 
 export default class GameReviewPage extends Component {
   static defaultProps = {
     match: { params: {} }
   };
-
-  static contextType = GameContext;
-
-  renderGame() {
-    const { game } = this.context;
+  
+  render() {
     const { gameId } = this.props.match.params;
+
     return (
-      <>
+      <Section className="GameReviewPage">
         <header className="GameReviewPage__header">
           <h2 className="GameReviewPage__heading">{game[gameId - 1].title}</h2>
           <img
@@ -31,27 +29,7 @@ export default class GameReviewPage extends Component {
           </div>
         </header>
         <ReviewList />
-      </>
+      </Section>
     );
-  }
-
-  render() {
-    const { error, game } = this.context;
-    const { gameId } = this.props.match.params;
-    let content;
-
-    if (error) {
-      content =
-        error.error === `Game doesn't exist` ? (
-          <p className="red">Game not found</p>
-        ) : (
-          <p className="red">There was an error</p>
-        );
-    } else if (!game[gameId - 1].id) {
-      content = <div className="loading" />;
-    } else {
-      content = this.renderGame();
-    }
-    return <Section className="GameReviewPage">{content}</Section>;
   }
 }
