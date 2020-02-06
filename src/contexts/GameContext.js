@@ -2,19 +2,17 @@ import React, { Component } from "react";
 import game from "../stores/game-store";
 
 export const nullGame = {
-  title: ""
+  game: {}
 };
 
 const GameContext = React.createContext({
   game,
-  comments: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setGame: () => {},
   clearGame: () => {},
-  setComments: () => {},
-  addComment: () => {}
+  addGame: () => {}
 });
 
 export default GameContext;
@@ -38,30 +36,23 @@ export class GameProvider extends Component {
     this.setState({ game });
   };
 
-  setComments = comments => {
-    this.setState({ comments });
-  };
-
   clearGame = () => {
     this.setGame(nullGame);
-    this.setComments([]);
   };
 
-  addComment = comment => {
-    this.setComments([...this.state.comments, comment]);
+  addGame = game => {
+    this.setGame([...this.state.game, game]);
   };
 
   render() {
     const value = {
       game: this.state.game,
-      comments: this.state.comments,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setGame: this.setGame,
-      setComments: this.setComments,
       clearGame: this.clearGame,
-      addComment: this.addComment
+      addGame: this.addGame
     };
     return (
       <GameContext.Provider value={value}>
