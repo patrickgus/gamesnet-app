@@ -13,10 +13,6 @@ export default class LandingPage extends Component {
         </div>
         <div className="description">
           <h3>See game reviews from your own peers</h3>
-          <img
-            src="placeholder.jpg"
-            alt="placehoder for screenshot of game list page"
-          />
           <p>
             Video games can get quite expensive and some take a significant
             investment of time to play. Knowing which game to buy can be a
@@ -28,10 +24,6 @@ export default class LandingPage extends Component {
         </div>
         <div className="description">
           <h3>Add any game to get reviewed</h3>
-          <img
-            src="placeholder.jpg"
-            alt="placehoder for screenshot of game review page"
-          />
           <p>
             From video games to board games, any user will be able to add any
             kind of game so that it can be rated and reviewed by other users.
