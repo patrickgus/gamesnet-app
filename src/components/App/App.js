@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import LandingPage from "../../routes/LandingPage/LandingPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import GameListPage from "../../routes/GameListPage/GameListPage";
-import GameReviewPage from "../../routes/GameReviewPage/GameReviewPage";
+import GamePage from "../../routes/GamePage/GamePage";
 import AddGamePage from "../../routes/AddGamePage/AddGamePage";
 import AddReviewPage from "../../routes/AddReviewPage/AddReviewPage";
 import "./App.css";
@@ -21,7 +21,7 @@ export default class App extends Component {
             <Route exact path={"/"} component={LandingPage} />
             <Route path={"/register"} component={RegistrationPage} />
             <Route path={"/games"} component={GameListPage} />
-            <Route path={"/review/:gameId"} component={GameReviewPage} />
+            <Route path={"/review/:gameId"} component={GamePage} />
             <Route path={"/addgame"} component={AddGamePage} />
             <Route path={"/addreview/:gameId"} component={AddReviewPage} />
           </Switch>
