@@ -1,0 +1,14 @@
+.GamePage__header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.GamePage__review {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #bbb;
+}
+
+.GamePage__review:nth-child(even) {
+  background-color: #ddd;
+}
