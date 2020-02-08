@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import GameContext from "../../contexts/GameContext";
 import GameApiService from "../../services/game-api-service";
 import { Section, Hyph } from "../../components/Utils/Utils";
-import ReviewList from "../../components/ReviewList/ReviewList";
-import "./GameReviewPage.css";
+import "./GamePage.css";
 
-export default class GameReviewPage extends Component {
+export default class GamePage extends Component {
   static defaultProps = {
     match: { params: {} }
   };
@@ -19,6 +18,9 @@ export default class GameReviewPage extends Component {
     GameApiService.getGame(gameId)
       .then(this.context.setGame)
       .catch(this.context.setError);
+    GameApiService.getGameReviews(gameId)
+      .then(this.context.setReviews)
+      .catch(this.context.setError);
   }
 
   componentWillUnmount() {
@@ -27,20 +29,20 @@ export default class GameReviewPage extends Component {
 
   renderGame() {
     const { gameId } = this.props.match.params;
-    const { game } = this.context;
+    const { game, reviews } = this.context;
     return (
       <>
-        <header className="GameReviewPage__header">
-          <h2 className="GameReviewPage__heading">{game.title}</h2>
+        <header className="GamePage__header">
+          <h2 className="GamePage__heading">{game.title}</h2>
           <img src={game.cover} alt={`Game cover art for ${game.title}`} />
           <h4>Avg Rating: {game.avg_rating}</h4>
-          <div className="GameReviewPage__links">
+          <div className="GamePage__links">
             <Link to={`/addreview/${gameId}`}>Add a Review</Link>
             <Hyph />
             <Link to={"/games"}>Back</Link>
           </div>
         </header>
-        <ReviewList />
+        <GameReviews reviews={reviews} />
       </>
     );
   }
@@ -60,6 +62,23 @@ export default class GameReviewPage extends Component {
     } else {
       content = this.renderGame();
     }
-    return <Section className="GameReviewPage">{content}</Section>;
+    return <Section className="GamePage">{content}</Section>;
   }
+}
+
+function GameReviews({ reviews = [] }) {
+  return (
+    <Section list className="GamePage__review-list">
+      {reviews.map(review => (
+        <Section key={review.id} className="GamePage__review">
+          <h4>"{review.title}"</h4>
+          <p>Rating: {review.rating}</p>
+          <div className="GamePage__review-review">
+            <p>{review.review}</p>
+          </div>
+          <p className="GamePage__review-user">- {review.user.username}</p>
+        </Section>
+      ))}
+    </Section>
+  );
 }
