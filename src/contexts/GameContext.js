@@ -12,7 +12,6 @@ const GameContext = React.createContext({
   clearError: () => {},
   setGame: () => {},
   clearGame: () => {},
-  addGame: () => {},
   setReviews: () => {},
   addReview: () => {}
 });
@@ -47,10 +46,6 @@ export class GameProvider extends Component {
     this.setReviews([]);
   };
 
-  addGame = game => {
-    this.setGame([...this.state.game, game]);
-  };
-
   addReview = review => {
     this.setReviews([...this.state.reviews, review]);
   };
@@ -65,7 +60,6 @@ export class GameProvider extends Component {
       setGame: this.setGame,
       setReviews: this.setReviews,
       clearGame: this.clearGame,
-      addGame: this.addGame,
       addReview: this.addReview
     };
     return (

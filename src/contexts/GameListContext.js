@@ -5,7 +5,8 @@ const GameListContext = React.createContext({
   error: null,
   setError: () => {},
   clearError: () => {},
-  setGameList: () => {}
+  setGameList: () => {},
+  addGame: () => {}
 });
 
 export default GameListContext;
@@ -27,6 +28,10 @@ export class GameListProvider extends Component {
 
   clearError = () => {
     this.setState({ error: null });
+  }
+
+  addGame = game => {
+    this.setGame([...this.state.gameList, game]);
   };
 
   render() {
@@ -35,7 +40,8 @@ export class GameListProvider extends Component {
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setGameList: this.setGameList
+      setGameList: this.setGameList,
+      addGame: this.addGame
     };
     return (
       <GameListContext.Provider value={value}>
