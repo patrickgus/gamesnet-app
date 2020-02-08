@@ -1,27 +1,39 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import GameContext from "../../contexts/GameContext";
+import GameApiService from "../../services/game-api-service";
 import { Section, Hyph } from "../../components/Utils/Utils";
 import ReviewList from "../../components/ReviewList/ReviewList";
-import game from "../../stores/game-store";
 import "./GameReviewPage.css";
 
 export default class GameReviewPage extends Component {
   static defaultProps = {
     match: { params: {} }
   };
-  
-  render() {
-    const { gameId } = this.props.match.params;
 
+  static contextType = GameContext;
+
+  componentDidMount() {
+    const { gameId } = this.props.match.params;
+    this.context.clearError();
+    GameApiService.getGame(gameId)
+      .then(this.context.setGame)
+      .catch(this.context.setError);
+  }
+
+  componentWillUnmount() {
+    this.context.clearGame();
+  }
+
+  renderGame() {
+    const { gameId } = this.props.match.params;
+    const { game } = this.context;
     return (
-      <Section className="GameReviewPage">
+      <>
         <header className="GameReviewPage__header">
-          <h2 className="GameReviewPage__heading">{game[gameId - 1].title}</h2>
-          <img
-            src={game[gameId - 1].cover}
-            alt={`Game cover art for ${game[gameId - 1].title}`}
-          />
-          <h4>Avg Rating: {game[gameId - 1].avg_rating}</h4>
+          <h2 className="GameReviewPage__heading">{game.title}</h2>
+          <img src={game.cover} alt={`Game cover art for ${game.title}`} />
+          <h4>Avg Rating: {game.avg_rating}</h4>
           <div className="GameReviewPage__links">
             <Link to={`/addreview/${gameId}`}>Add a Review</Link>
             <Hyph />
@@ -29,7 +41,25 @@ export default class GameReviewPage extends Component {
           </div>
         </header>
         <ReviewList />
-      </Section>
+      </>
     );
+  }
+
+  render() {
+    const { error, game } = this.context;
+    let content;
+    if (error) {
+      content =
+        error.error === `Game doesn't exist` ? (
+          <p className="red">Game not found</p>
+        ) : (
+          <p className="red">There was an error</p>
+        );
+    } else if (!game.id) {
+      content = <div className="loading" />;
+    } else {
+      content = this.renderGame();
+    }
+    return <Section className="GameReviewPage">{content}</Section>;
   }
 }
