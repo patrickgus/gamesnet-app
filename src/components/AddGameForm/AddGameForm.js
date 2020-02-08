@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import GameListContext from "../../contexts/GameContext";
+import GameApiService from "../../services/game-api-service";
 import {
   Input,
   Required,
@@ -7,23 +9,36 @@ import {
   Button
 } from "../../components/Utils/Utils";
 
-export default class AddGameForm extends Component {
-  state = {
-    toGameList: false
+class AddGameForm extends Component {
+  static contextType = GameListContext;
+
+  handleSumbit = e => {
+    e.preventDefault();
+    const { title, description, rated, platforms } = e.target;
+
+    GameApiService.postGame(
+      title.value,
+      description.value,
+      rated.value,
+      platforms.value
+    )
+      .then(this.context.addGame)
+      .then(() => {
+        title.value = "";
+        description.value = "";
+        rated.value = "";
+        platforms.value = "";
+        this.props.history.push("/games");
+      })
+      .catch(this.context.setError);
   };
 
   handleCancel = e => {
     e.preventDefault();
-    this.setState(() => ({
-      toGameList: true
-    }));
+    this.props.history.push("/games");
   };
 
   render() {
-    if (this.state.toGameList === true) {
-      return <Redirect to="/games" />;
-    }
-
     return (
       <form className="AddGameForm" onSubmit={this.handleSumbit}>
         <div className="game_title">
@@ -31,21 +46,15 @@ export default class AddGameForm extends Component {
             Game title <Required />
           </label>
           <Input
-            name="game_title"
+            name="title"
             type="text"
             required
             id="AddGameForm__game_title"
           />
         </div>
         <div className="game_cover">
-          <label htmlFor="AddGameForm__game_cover">
-            Game cover image url
-          </label>
-          <Input
-            name="game_cover"
-            type="text"
-            id="AddGameForm__game_cover"
-          />
+          <label htmlFor="AddGameForm__game_cover">Game cover image url</label>
+          <Input name="game_cover" type="text" id="AddGameForm__game_cover" />
         </div>
         <div className="game_description">
           <label htmlFor="AddGameForm__game_description">
@@ -54,7 +63,7 @@ export default class AddGameForm extends Component {
           <Textarea
             required
             aria-label="Write a brief description..."
-            name="game_description"
+            name="description"
             id="AddGameForm__game_description"
             rows="15"
             placeholder="Write a brief description..."
@@ -90,3 +99,5 @@ export default class AddGameForm extends Component {
     );
   }
 }
+
+export default withRouter(AddGameForm);
