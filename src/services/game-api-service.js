@@ -1,9 +1,10 @@
+import TokenService from "../services/token-service";
 import config from "../config";
 
 const GameApiService = {
   getGames() {
     return fetch(`${config.API_ENDPOINT}/games`, {
-      headers: {}
+      headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
@@ -11,7 +12,7 @@ const GameApiService = {
 
   getGame(gameId) {
     return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
-      headers: {}
+      headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
@@ -19,7 +20,7 @@ const GameApiService = {
 
   getGameReviews(gameId) {
     return fetch(`${config.API_ENDPOINT}/games/${gameId}/reviews`, {
-      headers: {}
+      headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
@@ -29,7 +30,8 @@ const GameApiService = {
     return fetch(`${config.API_ENDPOINT}/games`, {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         title,
@@ -41,12 +43,13 @@ const GameApiService = {
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
     );
   },
-  
+
   postReview(gameId, title, rating, review) {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         game_id: gameId,

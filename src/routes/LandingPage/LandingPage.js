@@ -9,7 +9,7 @@ export default class LandingPage extends Component {
       <Section className="LandingPage">
         <div className="login">
           <h3>Login Here</h3>
-          <LoginForm />
+          <LoginForm onLoginSuccess={this.handleLoginSuccess} />
         </div>
         <div className="description">
           <h3>See game reviews from your own peers</h3>

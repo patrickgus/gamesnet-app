@@ -1,42 +1,53 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import AuthApiService from "../../services/auth-api-service";
 import { Button, Input, Required } from "../Utils/Utils";
 
-export default class RegistrationForm extends Component {
-  state = {
-    toGameList: false,
-    toLandingPage: false
+class RegistrationForm extends Component {
+  static defaultProps = {
+    onRegistrationSuccess: () => {}
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.setState(() => ({
-      toGameList: true
-    }));
+  state = { error: null };
+
+  handleSubmit = ev => {
+    ev.preventDefault();
+    const { fullname, username, password } = ev.target;
+
+    this.setState({ error: null });
+    AuthApiService.postUser({
+      username: username.value,
+      password: password.value,
+      fullname: fullname.value
+    })
+      .then(user => {
+        fullname.value = "";
+        username.value = "";
+        password.value = "";
+        this.props.onRegistrationSuccess();
+        this.props.history.push("/games");
+      })
+      .catch(res => {
+        this.setState({ error: res.error });
+      });
   };
 
   handleCancel = e => {
     e.preventDefault();
-    this.setState(() => ({
-      toLandingPage: true
-    }));
+    this.props.history.push("/");
   };
 
   render() {
-    if (this.state.toGameList === true) {
-      return <Redirect to="/games" />;
-    } else if (this.state.toLandingPage === true) {
-      return <Redirect to="/" />;
-    }
-
+    const { error } = this.state;
     return (
       <form className="RegistrationForm" onSubmit={this.handleSubmit}>
+        <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="full_name">
           <label htmlFor="RegistrationForm__full_name">
             Full name <Required />
           </label>
           <Input
-            name="full_name"
+            name="fullname"
             type="text"
             required
             id="RegistrationForm__full_name"
@@ -47,7 +58,7 @@ export default class RegistrationForm extends Component {
             Username <Required />
           </label>
           <Input
-            name="user_name"
+            name="username"
             type="text"
             required
             id="RegistrationForm__user_name"
@@ -70,3 +81,5 @@ export default class RegistrationForm extends Component {
     );
   }
 }
+
+export default withRouter(RegistrationForm);
