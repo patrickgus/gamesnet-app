@@ -27,7 +27,7 @@ export default class GameListPage extends Component {
     return (
       <Section list className="GameList">
         <Link to={"/addgame"}>Add a Game</Link>
-        <SearchForm />
+        <SearchForm games={this.renderGames()}/>
         {error ? (
           <p className="red">There was an error, try again</p>
         ) : (
