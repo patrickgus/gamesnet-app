@@ -15,11 +15,10 @@ class AddReviewForm extends Component {
   handleSumbit = e => {
     e.preventDefault();
     const { gameId } = this.props.match.params;
-    const { game } = this.context;
     const { title, rating, review } = e.target;
 
-    GameApiService.postGame(
-      game.id,
+    GameApiService.postReview(
+      gameId,
       title.value,
       Number(rating.value),
       review.value
