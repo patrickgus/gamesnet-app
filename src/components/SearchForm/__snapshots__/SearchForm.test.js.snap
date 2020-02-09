@@ -3,6 +3,7 @@
 exports[`SearchForm component renders the form as expected 1`] = `
 <form
   className="searchBarNav"
+  onSubmit={[Function]}
 >
   <label
     htmlFor="search"
@@ -12,7 +13,9 @@ exports[`SearchForm component renders the form as expected 1`] = `
   <input
     id="search"
     name="search"
+    onChange={[Function]}
     type="text"
+    value=""
   />
   <label
     htmlFor="sort"
@@ -22,6 +25,8 @@ exports[`SearchForm component renders the form as expected 1`] = `
   <select
     id="sort"
     name="sort"
+    onChange={[Function]}
+    value=""
   >
     <option
       value="title"
