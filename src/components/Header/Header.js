@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import TokenService from "../../services/token-service";
 import IdleService from "../../services/idle-service";
 import { Hyph } from "../Utils/Utils";
 import "./Header.css";
 
-export default class Header extends Component {
+class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
     /* when logging out, clear the callbacks to the refresh api and idle auto logout */
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
+
+    this.props.history.push("/");
   };
 
   renderLogoutLink() {
@@ -46,3 +48,5 @@ export default class Header extends Component {
     );
   }
 }
+
+export default withRouter(Header);
