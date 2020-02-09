@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import GameListContext from "../../contexts/GameListContext";
 import GameApiService from "../../services/game-api-service";
 import { Section } from "../../components/Utils/Utils";
 import GameListItem from "../../components/GameListItem/GameListItem";
-import SearchHeader from "../../components/SearchHeader/SearchHeader";
+import SearchForm from "../../components/SearchForm/SearchForm";
 import "./GameListPage.css";
 
 export default class GameListPage extends Component {
@@ -25,7 +26,8 @@ export default class GameListPage extends Component {
     const { error } = this.context;
     return (
       <Section list className="GameList">
-        <SearchHeader />
+        <Link to={"/addgame"}>Add a Game</Link>
+        <SearchForm />
         {error ? (
           <p className="red">There was an error, try again</p>
         ) : (
