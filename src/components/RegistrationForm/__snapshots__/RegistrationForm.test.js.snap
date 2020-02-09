@@ -6,6 +6,9 @@ exports[`RegistrationForm component renders the form as expected 1`] = `
   onSubmit={[Function]}
 >
   <div
+    role="alert"
+  />
+  <div
     className="full_name"
   >
     <label
@@ -21,7 +24,7 @@ exports[`RegistrationForm component renders the form as expected 1`] = `
     <input
       className="Input "
       id="RegistrationForm__full_name"
-      name="full_name"
+      name="fullname"
       required={true}
       type="text"
     />
@@ -42,7 +45,7 @@ exports[`RegistrationForm component renders the form as expected 1`] = `
     <input
       className="Input "
       id="RegistrationForm__user_name"
-      name="user_name"
+      name="username"
       required={true}
       type="text"
     />

@@ -3,6 +3,7 @@
 exports[`AddGameForm component renders the form as expected 1`] = `
 <form
   className="AddGameForm"
+  onSubmit={[Function]}
 >
   <div
     className="game_title"
@@ -20,7 +21,7 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     <input
       className="Input "
       id="AddGameForm__game_title"
-      name="game_title"
+      name="title"
       required={true}
       type="text"
     />
@@ -57,7 +58,7 @@ exports[`AddGameForm component renders the form as expected 1`] = `
       aria-label="Write a brief description..."
       className="Textarea "
       id="AddGameForm__game_description"
-      name="game_description"
+      name="description"
       placeholder="Write a brief description..."
       required={true}
       rows="15"

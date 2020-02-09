@@ -6,7 +6,7 @@ exports[`Header component renders the UI as expected 1`] = `
 >
   <h1>
     <a
-      href="/"
+      href="/games"
       onClick={[Function]}
     >
       GamesNet
@@ -16,10 +16,10 @@ exports[`Header component renders the UI as expected 1`] = `
     className="Header__not-logged-in"
   >
     <a
-      href="/register"
+      href="/"
       onClick={[Function]}
     >
-      Register
+      Log in
     </a>
     <span
       className="Hyph"
@@ -27,10 +27,10 @@ exports[`Header component renders the UI as expected 1`] = `
        - 
     </span>
     <a
-      href="/"
+      href="/register"
       onClick={[Function]}
     >
-      Log in
+      Register
     </a>
   </div>
 </nav>

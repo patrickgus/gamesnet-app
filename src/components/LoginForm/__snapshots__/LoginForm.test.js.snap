@@ -6,6 +6,9 @@ exports[`LoginForm component renders the form as expected 1`] = `
   onSubmit={[Function]}
 >
   <div
+    role="alert"
+  />
+  <div
     className="user_name"
   >
     <label
@@ -34,6 +37,16 @@ exports[`LoginForm component renders the form as expected 1`] = `
       name="password"
       type="password"
     />
+  </div>
+  <div
+    className="demo-user"
+  >
+    <p>
+      testuser
+    </p>
+    <p>
+      Test123!
+    </p>
   </div>
   <button
     className="Button "

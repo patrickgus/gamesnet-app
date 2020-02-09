@@ -3,7 +3,29 @@
 exports[`AddReviewForm component renders the form as expected 1`] = `
 <form
   className="AddReviewForm"
+  onSubmit={[Function]}
 >
+  <div
+    className="review_title"
+  >
+    <label
+      htmlFor="AddReviewForm__review_title"
+    >
+      Review title 
+      <span
+        className="Required "
+      >
+        *
+      </span>
+    </label>
+    <input
+      className="Input "
+      id="AddReviewForm__review_title"
+      name="title"
+      required={true}
+      type="text"
+    />
+  </div>
   <div
     className="game_rating"
   >
@@ -19,7 +41,7 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
     </label>
     <select
       id="AddReviewForm__game_rating"
-      name="game_rating"
+      name="rating"
       required={true}
     >
       <option
@@ -91,7 +113,7 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
       aria-label="Write your review..."
       className="Textarea "
       id="AddReviewForm__game_review"
-      name="game_review"
+      name="review"
       placeholder="Write your review..."
       required={true}
       rows="15"
@@ -105,6 +127,7 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
   </button>
   <button
     className="Button "
+    onClick={[Function]}
   >
     Cancel
   </button>
