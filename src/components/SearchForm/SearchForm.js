@@ -30,28 +30,7 @@ export default class SearchForm extends Component {
     e.preventDefault();
     const gameList = this.props.games;
     const { sort } = this.state;
-    let filteredList = [];
-
-    if (this.state.searchTerm !== "") {
-      filteredList = gameList.filter(game => {
-        const title = game.props.game.title.toLowerCase();
-        const filter = this.state.searchTerm.toLowerCase();
-        return title.includes(filter);
-      });
-    } else {
-      filteredList = this.props.games;
-    }
-
-    if (sort) {
-      filteredList.sort((a, b) => {
-        return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
-      });
-    }
-
-    this.setState({
-      filteredList
-    });
-    console.log(filteredList);
+    this.context.filterGames(gameList, sort, this.state.searchTerm);
   };
 
   render() {
