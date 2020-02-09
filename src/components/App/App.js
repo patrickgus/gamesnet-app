@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
+import PrivateRoute from "../Utils/PrivateRoute";
+import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import LandingPage from "../../routes/LandingPage/LandingPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import GameListPage from "../../routes/GameListPage/GameListPage";
@@ -83,11 +85,14 @@ export default class App extends Component {
         <main className="App__main">
           <Switch>
             <Route exact path={"/"} component={LandingPage} />
-            <Route path={"/register"} component={RegistrationPage} />
-            <Route path={"/games"} component={GameListPage} />
-            <Route path={"/review/:gameId"} component={GamePage} />
-            <Route path={"/addgame"} component={AddGamePage} />
-            <Route path={"/addreview/:gameId"} component={AddReviewPage} />
+            <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
+            <PrivateRoute path={"/games"} component={GameListPage} />
+            <PrivateRoute path={"/review/:gameId"} component={GamePage} />
+            <PrivateRoute path={"/addgame"} component={AddGamePage} />
+            <PrivateRoute
+              path={"/addreview/:gameId"}
+              component={AddReviewPage}
+            />
           </Switch>
         </main>
       </div>
