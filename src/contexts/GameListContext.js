@@ -37,7 +37,25 @@ export class GameListProvider extends Component {
     this.setGame([...this.state.gameList, game]);
   };
 
-  filterGames = filteredList => {
+  filterGames = (games, sort, searchTerm) => {
+    let filteredList = [];
+
+    if (searchTerm !== "") {
+      filteredList = games.filter(game => {
+        const title = game.props.game.title.toLowerCase();
+        const filter = searchTerm.toLowerCase();
+        return title.includes(filter);
+      });
+    } else {
+      filteredList = games;
+    }
+
+    if (sort) {
+      filteredList.sort((a, b) => {
+        return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+      });
+    }
+
     this.setGameList({ filteredList })
   }
 
