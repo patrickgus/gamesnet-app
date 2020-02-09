@@ -37,7 +37,7 @@ export default class Header extends Component {
     return (
       <nav className="Header">
         <h1>
-          <Link to="/">GamesNet</Link>
+          <Link to="/games">GamesNet</Link>
         </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
