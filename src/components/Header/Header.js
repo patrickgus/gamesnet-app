@@ -8,7 +8,6 @@ import "./Header.css";
 class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
-    /* when logging out, clear the callbacks to the refresh api and idle auto logout */
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
 
