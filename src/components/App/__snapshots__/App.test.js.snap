@@ -51,7 +51,7 @@ exports[`App component renders the UI as expected 1`] = `
         className="login"
       >
         <h3>
-          Login Here
+          Log in Here
         </h3>
         <form
           className="LoginForm"
@@ -90,16 +90,6 @@ exports[`App component renders the UI as expected 1`] = `
               type="password"
             />
           </div>
-          <div
-            className="demo-user"
-          >
-            <p>
-              testuser
-            </p>
-            <p>
-              Test123!
-            </p>
-          </div>
           <button
             className="Button "
             type="submit"
@@ -107,6 +97,21 @@ exports[`App component renders the UI as expected 1`] = `
             Login
           </button>
         </form>
+        <div
+          className="demo-user"
+        >
+          <ul>
+            <strong>
+              For Demo:
+            </strong>
+            <li>
+              Username: testuser
+            </li>
+            <li>
+              Password: Test123!
+            </li>
+          </ul>
+        </div>
       </div>
       <div
         className="description"

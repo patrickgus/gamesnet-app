@@ -38,16 +38,6 @@ exports[`LoginForm component renders the form as expected 1`] = `
       type="password"
     />
   </div>
-  <div
-    className="demo-user"
-  >
-    <p>
-      testuser
-    </p>
-    <p>
-      Test123!
-    </p>
-  </div>
   <button
     className="Button "
     type="submit"
