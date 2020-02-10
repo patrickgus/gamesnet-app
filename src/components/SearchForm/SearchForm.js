@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-// import GameListContext from "../../contexts/GameListContext";
+import { withRouter } from "react-router-dom";
+import GameListContext from "../../contexts/GameListContext";
 import "./SearchForm.css";
 
-export default class SearchForm extends Component {
+class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,7 @@ export default class SearchForm extends Component {
     };
   }
 
-  // static contextType = GameListContext;
+  static contextType = GameListContext;
 
   handleSearch = e => {
     this.setState({
@@ -29,8 +30,8 @@ export default class SearchForm extends Component {
     e.preventDefault();
     const gameList = this.props.games;
     const { sort } = this.state;
+
     let filteredList = [];
-    console.log(sort);
 
     if (this.state.searchTerm !== "") {
       filteredList = gameList.filter(game => {
@@ -51,8 +52,9 @@ export default class SearchForm extends Component {
         return b[sort] - a[sort];
       });
     }
-    console.log(filteredList);
-    return this.context.filterGames;
+    this.context.setGameList(filteredList);
+
+    this.props.history.push("/games");
   };
 
   render() {
@@ -82,3 +84,5 @@ export default class SearchForm extends Component {
     );
   }
 }
+
+export default withRouter(SearchForm);
