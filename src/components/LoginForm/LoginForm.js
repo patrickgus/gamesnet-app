@@ -43,10 +43,6 @@ class LoginForm extends Component {
           <label htmlFor="LoginForm__password">Password</label>
           <Input name="password" type="password" id="LoginForm__password" />
         </div>
-        <div className="demo-user">
-          <p>testuser</p>
-          <p>Test123!</p>
-        </div>
         <Button type="submit">Login</Button>
       </form>
     );

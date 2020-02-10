@@ -1,4 +1,5 @@
-.login, .description {
+.login,
+.description {
   min-height: 200px;
   padding: 15px 20px;
   background-color: #bbb;
@@ -6,4 +7,18 @@
 
 .login {
   background-color: #ddd;
+}
+.demo-user {
+  text-align: center;
+  line-height: 1.5;
+  border: solid 1px black;
+  border-radius: 8px;
+  max-width: 153px;
+  margin: 15px auto;
+  background-color: aliceblue;
+}
+
+.demo-user ul {
+  list-style: none;
+  padding: 0;
 }
