@@ -2,11 +2,11 @@
 .description {
   min-height: 200px;
   padding: 15px 20px;
-  background-color: #bbb;
+  background-color: rgba(187, 187, 187, 0.75);
 }
 
 .login {
-  background-color: #ddd;
+  background-color: rgb(221, 221, 221, 0.75);
 }
 .demo-user {
   text-align: center;
@@ -15,7 +15,7 @@
   border-radius: 8px;
   max-width: 153px;
   margin: 15px auto;
-  background-color: aliceblue;
+  background-color: rgba(235, 225, 238, 0.363);
 }
 
 .demo-user ul {
