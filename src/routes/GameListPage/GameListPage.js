@@ -23,11 +23,11 @@ export default class GameListPage extends Component {
   }
 
   render() {
-    const { error, gameList } = this.context;
+    const { error } = this.context;
     return (
       <Section list className="GameList">
         <Link to={"/addgame"}>Add a Game</Link>
-        <SearchForm games={gameList}/>
+        <SearchForm />
         {error ? (
           <p className="red">There was an error, try again</p>
         ) : (

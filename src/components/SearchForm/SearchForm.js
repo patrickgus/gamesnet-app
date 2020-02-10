@@ -4,13 +4,10 @@ import GameListContext from "../../contexts/GameListContext";
 import "./SearchForm.css";
 
 class SearchForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: "",
-      sort: "title"
-    };
-  }
+  state = {
+    searchTerm: "",
+    sort: "title"
+  };
 
   static contextType = GameListContext;
 
@@ -28,7 +25,7 @@ class SearchForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const gameList = this.props.games;
+    const { gameList } = this.context;
     const { sort } = this.state;
 
     let filteredList = [];
