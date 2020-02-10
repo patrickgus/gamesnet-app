@@ -6,9 +6,8 @@ export default class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filteredList: [],
       searchTerm: "",
-      sort: ""
+      sort: "title"
     };
   }
 
@@ -30,7 +29,30 @@ export default class SearchForm extends Component {
     e.preventDefault();
     const gameList = this.props.games;
     const { sort } = this.state;
-    this.context.filterGames(gameList, sort, this.state.searchTerm);
+    let filteredList = [];
+    console.log(sort);
+
+    if (this.state.searchTerm !== "") {
+      filteredList = gameList.filter(game => {
+        const title = game.title.toLowerCase();
+        const filter = this.state.searchTerm.toLowerCase();
+        return title.includes(filter);
+      });
+    } else {
+      filteredList = gameList;
+    }
+
+    if (sort === "title") {
+      filteredList.sort((a, b) => {
+        return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+      });
+    } else if (sort === "avg_rating") {
+      filteredList.sort((a, b) => {
+        return b[sort] - a[sort];
+      });
+    }
+    console.log(filteredList);
+    return this.context.filterGames;
   };
 
   render() {
@@ -53,7 +75,7 @@ export default class SearchForm extends Component {
           onChange={this.handleSort}
         >
           <option value="title">Title</option>
-          <option value="rating">Rating</option>
+          <option value="avg_rating">Rating</option>
         </select>
         <button type="submit">Go</button>
       </form>
