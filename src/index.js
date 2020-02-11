@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import { GameListProvider } from "./contexts/GameListContext";
 import { GameProvider } from "./contexts/GameContext";
 import App from "./components/App/App";
+import "normalize.css";
 import "./index.css";
 
 ReactDOM.render(
