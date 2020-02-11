@@ -1,4 +1,14 @@
 .GameList {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-top: 15px;
+}
+
+.addGameLink {
+  color: rgb(0, 224, 224);
+}
+
+.addGameLink:hover {
+  color: rgb(0, 173, 173);
 }

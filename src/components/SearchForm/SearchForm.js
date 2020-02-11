@@ -56,7 +56,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form className="searchBarNav" onSubmit={this.handleSubmit}>
+      <form className="searchBar" onSubmit={this.handleSubmit}>
         <label htmlFor="search">Search: </label>
         <input
           type="text"

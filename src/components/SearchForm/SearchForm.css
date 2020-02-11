@@ -1,9 +1,35 @@
-.searchBarNav {
+.searchBar {
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
   margin-top: 15px;
+  color: rgb(0, 224, 224);
+}
+
+.searchBar label {
+  margin: 0 5px;
+}
+
+.searchBar button {
+  background-color: rgb(209, 64, 209);
+  border-color: rgb(182, 108, 182);
+  border-radius: 4px;
+  margin-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.searchBar button:hover {
+  background-color: rgb(168, 52, 168);
 }
 
 #search {
-  max-width: 130px;
+  max-width: 120px;
+  border: 1px solid rgb(19, 37, 85);
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+#sort {
+  border: 1px solid rgb(19, 37, 85);
+  border-radius: 4px;
 }

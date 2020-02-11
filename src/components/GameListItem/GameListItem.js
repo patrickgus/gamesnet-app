@@ -11,15 +11,15 @@ export default function GameListItem(props) {
       <header className="GameListItem__header">
         <Link to={`/review/${game.id}`} className="GameListItem__link">
           <h2 className="GameListItem__heading">{game.title}</h2>
+          <img className="GameListItem__cover" src={game.cover} alt={`Game cover art for ${game.title}`} />
         </Link>
-        <img src={game.cover} alt={`Game cover art for ${game.title}`} />
-        <h4>Avg Rating: {game.avg_rating}</h4>
+        <h4>Average Rating: {game.avg_rating}</h4>
       </header>
-      <div className="gameInfo">
+      <div className="GameListItem__info">
         <h4>Description</h4>
         <p>{game.description}</p>
-        <p>Rated: {game.rated}</p>
-        <p>Platforms: {game.platforms}</p>
+        <p><strong>Rated:</strong> {game.rated}</p>
+        <p><strong>Platforms:</strong> {game.platforms}</p>
       </div>
     </Section>
   );

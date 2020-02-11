@@ -1,10 +1,50 @@
 .GameListItem {
-  margin: 0;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(240, 240, 240, 0.6);
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 20px;
 }
 
-.GameListItem:nth-child(even) {
-  background-color: #ddd;
+.GameListItem__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.GameListItem__link {
+  text-align: center;
+}
+
+.GameListItem__link h2 {
+  margin: 0 0 20px;
+}
+
+.GameListItem__link img {
+  width: 250px;
+}
+
+.GameListItem__link:hover {
+  color: rgb(71, 71, 71);
+  opacity: 0.75;
+}
+
+.GameListItem__link h2:hover {
+  color: rgb(71, 71, 71);
+}
+
+.GameListItem__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.GameListItem__info h4 {
+  margin: 5px 0;
+}
+
+.GameListItem__info p {
+  margin: 8px 0;
 }
