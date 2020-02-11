@@ -1,21 +1,29 @@
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(221, 221, 221, 0.7);
+  border-radius: 10px;
+}
+
+.LandingPage h2,
+h3 {
+  margin: 0 0 15px;
+}
+
 .login,
 .description {
   min-height: 200px;
-  padding: 15px 20px;
-  background-color: rgba(187, 187, 187, 0.75);
+  padding: 10px 20px;
 }
 
-.login {
-  background-color: rgb(221, 221, 221, 0.75);
-}
 .demo-user {
   text-align: center;
   line-height: 1.5;
   border: solid 1px black;
   border-radius: 8px;
-  max-width: 153px;
+  max-width: 160px;
   margin: 15px auto;
-  background-color: rgba(235, 225, 238, 0.363);
+  background-color: rgba(190, 160, 199, 0.363);
 }
 
 .demo-user ul {
