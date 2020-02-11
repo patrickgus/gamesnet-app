@@ -10,8 +10,8 @@
 }
 
 .searchBar button {
-  background-color: rgb(209, 64, 209);
-  border-color: rgb(182, 108, 182);
+  background-color: rgb(234, 0, 255);;
+  border-color: rgb(194, 68, 194);
   border-radius: 4px;
   margin-left: 5px;
   font-weight: bold;
@@ -19,7 +19,7 @@
 }
 
 .searchBar button:hover {
-  background-color: rgb(168, 52, 168);
+  background-color: rgb(139, 0, 151);
 }
 
 #search {
