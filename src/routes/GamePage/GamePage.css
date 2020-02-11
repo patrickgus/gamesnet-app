@@ -1,14 +1,47 @@
+.GamePage {
+  display: flex;
+  flex-direction: column;
+}
+
 .GamePage__header {
-  text-align: center;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.GamePage__header h2 {
+  color: rgb(0, 224, 224);
+}
+
+.GamePage__header h3 {
+  color: rgb(0, 224, 224);
+  margin: 15px 0;
+}
+
+.GamePage__header img {
+  width: 250px;
+}
+
+.GamePage__links a {
+  color: rgb(0, 224, 224);
+}
+
+.GamePage__links a:hover {
+  color: rgb(0, 173, 173);
+}
+
+.GamePage__links .Hyph {
+  color: rgb(0, 224, 224);
+}
+
+.GamePage__review-list {
+  display: flex;
+  flex-direction: column;
 }
 
 .GamePage__review {
-  margin: 0;
+  margin: 20px 0;
   padding: 10px 20px;
-  background-color: #bbb;
-}
-
-.GamePage__review:nth-child(even) {
-  background-color: #ddd;
+  background-color: rgba(240, 240, 240, 0.75);
+  border-radius: 10px;
 }

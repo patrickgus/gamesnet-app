@@ -35,7 +35,7 @@ export default class GamePage extends Component {
         <header className="GamePage__header">
           <h2 className="GamePage__heading">{game.title}</h2>
           <img src={game.cover} alt={`Game cover art for ${game.title}`} />
-          <h4>Avg Rating: {game.avg_rating}</h4>
+          <h3>Average Rating: {game.avg_rating}</h3>
           <div className="GamePage__links">
             <Link to={`/addreview/${gameId}`}>Add a Review</Link>
             <Hyph />
