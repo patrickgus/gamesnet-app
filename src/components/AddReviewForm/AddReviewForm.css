@@ -1,7 +1,30 @@
-.game_rating {
+.AddReviewForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddReviewForm label {
+  color: rgb(0, 224, 224);
+}
+
+.AddReviewForm input,
+textarea {
+  opacity: 0.75;
+}
+
+.AddReviewForm__title {
+  margin-bottom: 5px;
+}
+
+.AddReviewForm__buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.AddReviewForm__rating {
   margin-bottom: 20px;
 }
 
-#AddReviewForm__game_rating {
+#game-rating {
   margin-left: 10px;
 }

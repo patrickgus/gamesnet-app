@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import GameContext from "../../contexts/GameContext";
 import GameApiService from "../../services/game-api-service";
-import { Input, Required, Textarea, Button } from "../../components/Utils/Utils";
+import {
+  Input,
+  Required,
+  Textarea,
+  Button
+} from "../../components/Utils/Utils";
 import "./AddReviewForm.css";
 
 class AddReviewForm extends Component {
@@ -42,22 +47,17 @@ class AddReviewForm extends Component {
   render() {
     return (
       <form className="AddReviewForm" onSubmit={this.handleSumbit}>
-        <div className="review_title">
-          <label htmlFor="AddReviewForm__review_title">
+        <div className="AddReviewForm__title">
+          <label htmlFor="review-title">
             Review title <Required />
           </label>
-          <Input
-            name="title"
-            type="text"
-            required
-            id="AddReviewForm__review_title"
-          />
+          <Input name="title" type="text" required id="review-title" />
         </div>
-        <div className="game_rating">
-          <label htmlFor="AddReviewForm__game_rating">
+        <div className="AddReviewForm__rating">
+          <label htmlFor="game-rating">
             Rating <Required />
           </label>
-          <select name="rating" required id="AddReviewForm__game_rating">
+          <select name="rating" required id="game-rating">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -70,21 +70,23 @@ class AddReviewForm extends Component {
             <option value="10">10</option>
           </select>
         </div>
-        <div className="game_review">
-          <label htmlFor="AddReviewForm__game_review">
+        <div className="AddReviewForm__game-review">
+          <label htmlFor="game-review">
             Game review <Required />
           </label>
           <Textarea
             required
             aria-label="Write your review..."
             name="review"
-            id="AddReviewForm__game_review"
+            id="game-review"
             rows="15"
             placeholder="Write your review..."
           />
         </div>
-        <Button type="submit">Add Review</Button>
-        <Button onClick={this.handleCancel}>Cancel</Button>
+        <div className="AddReviewForm__buttons">
+          <Button type="submit">Add Review</Button>
+          <Button onClick={this.handleCancel}>Cancel</Button>
+        </div>
       </form>
     );
   }
