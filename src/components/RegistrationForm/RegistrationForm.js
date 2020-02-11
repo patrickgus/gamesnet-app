@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import AuthApiService from "../../services/auth-api-service";
 import { Button, Input, Required } from "../Utils/Utils";
+import "./RegistrationForm.css";
 
 class RegistrationForm extends Component {
   static defaultProps = {
@@ -75,8 +76,10 @@ class RegistrationForm extends Component {
             id="RegistrationForm__password"
           />
         </div>
-        <Button type="submit">Register</Button>
-        <Button onClick={this.handleCancel}>Cancel</Button>
+        <div className="RegistrationForm__buttons">
+          <Button type="submit">Register</Button>
+          <Button onClick={this.handleCancel}>Cancel</Button>
+        </div>
       </form>
     );
   }
