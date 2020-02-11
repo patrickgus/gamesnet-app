@@ -6,7 +6,7 @@
 }
 
 .searchBar label {
-  margin: 0 5px;
+  margin-right: 5px;
 }
 
 .searchBar button {
@@ -23,13 +23,31 @@
 }
 
 #search {
-  max-width: 120px;
+  width: 120px;
   border: 1px solid rgb(19, 37, 85);
   border-radius: 4px;
   padding-left: 5px;
+  margin-right: 5px;
 }
 
 #sort {
   border: 1px solid rgb(19, 37, 85);
   border-radius: 4px;
+}
+
+@media screen and (max-width: 350px) {
+  #search {
+    width: 80px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .searchBar {
+    width: 480px;
+  }
+
+  #search {
+    width: 250px;
+    margin-right: 10px;
+  }
 }
