@@ -13,7 +13,7 @@ export default function GameListItem(props) {
           <h2 className="GameListItem__heading">{game.title}</h2>
           <img className="GameListItem__cover" src={game.cover} alt={`Game cover art for ${game.title}`} />
         </Link>
-        <h4>Average Rating: {game.avg_rating}</h4>
+        <h3>Average Rating: {game.avg_rating}</h3>
       </header>
       <div className="GameListItem__info">
         <h4>Description</h4>

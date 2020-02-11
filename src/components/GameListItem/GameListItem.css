@@ -1,7 +1,6 @@
 .GameListItem {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: rgba(240, 240, 240, 0.6);
   border-radius: 10px;
   margin: 15px 0;
@@ -12,6 +11,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.GameListItem__header h3 {
+  margin: 15px 0;
 }
 
 .GameListItem__link {
@@ -38,11 +41,11 @@
 .GameListItem__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .GameListItem__info h4 {
   margin: 5px 0;
+  text-align: center;
 }
 
 .GameListItem__info p {
