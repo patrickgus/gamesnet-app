@@ -10,6 +10,12 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(https://free4kwallpapers.com/uploads/wallpaper/purple-sun-wallpaper-1920x1080-wallpaper.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h2,
