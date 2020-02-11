@@ -13,16 +13,20 @@
   align-items: center;
 }
 
+.GameListItem__header a {
+  color: rgb(36, 36, 36);
+}
+
+.GameListItem__link h2 {
+  margin: 0 0 20px;
+}
+
 .GameListItem__header h3 {
   margin: 15px 0;
 }
 
 .GameListItem__link {
   text-align: center;
-}
-
-.GameListItem__link h2 {
-  margin: 0 0 20px;
 }
 
 .GameListItem__link img {

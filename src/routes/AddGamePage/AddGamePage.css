@@ -1,0 +1,8 @@
+.AddGame {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddGame__header h2 {
+  color: rgb(234, 0, 255);
+}

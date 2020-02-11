@@ -5,7 +5,7 @@
 
 .Input,
 .Textarea {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(221, 221, 221);
   display: block;
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -17,7 +17,7 @@
 
 .Input::placeholder,
 .Textarea::placeholder {
-  color: #ccc;
+  color: rgba(104, 103, 103, 0.75);
 }
 
 .Textarea {
@@ -25,8 +25,8 @@
 }
 
 .Button {
-  background-color: rgb(209, 64, 209);
-  border-color: rgb(182, 108, 182);
+  background-color: rgb(234, 0, 255);;
+  border-color: rgb(194, 68, 194);
   font-size: 1.1em;
   border-radius: 4px;
   padding: 8px 12px;
@@ -35,7 +35,7 @@
 }
 
 .Button:hover {
-  background-color: rgb(168, 52, 168);
+  background-color: rgb(139, 0, 151);
 }
 
 .Required {

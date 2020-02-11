@@ -8,6 +8,7 @@ import {
   Textarea,
   Button
 } from "../../components/Utils/Utils";
+import "./AddGameForm.css";
 
 class AddGameForm extends Component {
   static contextType = GameListContext;
@@ -41,60 +42,53 @@ class AddGameForm extends Component {
   render() {
     return (
       <form className="AddGameForm" onSubmit={this.handleSumbit}>
-        <div className="game_title">
-          <label htmlFor="AddGameForm__game_title">
+        <div className="AddGameForm__title">
+          <label htmlFor="title">
             Game title <Required />
           </label>
-          <Input
-            name="title"
-            type="text"
-            required
-            id="AddGameForm__game_title"
-          />
+          <Input name="title" type="text" required id="title" />
         </div>
-        <div className="game_cover">
-          <label htmlFor="AddGameForm__game_cover">Game cover image url</label>
-          <Input name="game_cover" type="text" id="AddGameForm__game_cover" />
-        </div>
-        <div className="game_description">
-          <label htmlFor="AddGameForm__game_description">
+        <div className="AddGameForm__description">
+          <label htmlFor="description">
             Game description <Required />
           </label>
           <Textarea
             required
             aria-label="Write a brief description..."
             name="description"
-            id="AddGameForm__game_description"
+            id="description"
             rows="15"
             placeholder="Write a brief description..."
           />
         </div>
-        <div className="rated">
-          <label htmlFor="AddGameForm__rated">
+        <div className="AddGameForm__rated">
+          <label htmlFor="rated">
             Rated <Required />
           </label>
           <Input
             name="rated"
             type="text"
             required
-            id="AddGameForm__rated"
+            id="rated"
             placeholder="E, T, M, etc."
           />
         </div>
-        <div className="platforms">
-          <label htmlFor="AddGameForm__platforms">
+        <div className="AddGameForm__platforms">
+          <label htmlFor="platforms">
             Platforms <Required />
           </label>
           <Input
             name="platforms"
             type="text"
             required
-            id="AddGameForm__platforms"
+            id="platforms"
             placeholder="Playstation, Xbox, PC, etc."
           />
         </div>
-        <Button type="submit">Add Game</Button>
-        <Button onClick={this.handleCancel}>Cancel</Button>
+        <div className="AddGameForm__buttons">
+          <Button type="submit">Add Game</Button>
+          <Button onClick={this.handleCancel}>Cancel</Button>
+        </div>
       </form>
     );
   }

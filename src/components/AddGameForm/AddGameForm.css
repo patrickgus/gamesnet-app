@@ -1,0 +1,18 @@
+.AddGameForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddGameForm label {
+  color: rgb(0, 224, 224);
+}
+
+.AddGameForm input,
+textarea {
+  opacity: 0.75;
+}
+
+.AddGameForm__buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
