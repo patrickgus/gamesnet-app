@@ -6,10 +6,10 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="review_title"
+    className="AddReviewForm__title"
   >
     <label
-      htmlFor="AddReviewForm__review_title"
+      htmlFor="review-title"
     >
       Review title 
       <span
@@ -20,17 +20,17 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
     </label>
     <input
       className="Input "
-      id="AddReviewForm__review_title"
+      id="review-title"
       name="title"
       required={true}
       type="text"
     />
   </div>
   <div
-    className="game_rating"
+    className="AddReviewForm__rating"
   >
     <label
-      htmlFor="AddReviewForm__game_rating"
+      htmlFor="game-rating"
     >
       Rating 
       <span
@@ -40,7 +40,7 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
       </span>
     </label>
     <select
-      id="AddReviewForm__game_rating"
+      id="game-rating"
       name="rating"
       required={true}
     >
@@ -97,10 +97,10 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
     </select>
   </div>
   <div
-    className="game_review"
+    className="AddReviewForm__game-review"
   >
     <label
-      htmlFor="AddReviewForm__game_review"
+      htmlFor="game-review"
     >
       Game review 
       <span
@@ -112,24 +112,28 @@ exports[`AddReviewForm component renders the form as expected 1`] = `
     <textarea
       aria-label="Write your review..."
       className="Textarea "
-      id="AddReviewForm__game_review"
+      id="game-review"
       name="review"
       placeholder="Write your review..."
       required={true}
       rows="15"
     />
   </div>
-  <button
-    className="Button "
-    type="submit"
+  <div
+    className="AddReviewForm__buttons"
   >
-    Add Review
-  </button>
-  <button
-    className="Button "
-    onClick={[Function]}
-  >
-    Cancel
-  </button>
+    <button
+      className="Button "
+      type="submit"
+    >
+      Add Review
+    </button>
+    <button
+      className="Button "
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
 </form>
 `;

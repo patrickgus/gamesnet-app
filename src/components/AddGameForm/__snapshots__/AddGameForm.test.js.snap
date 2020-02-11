@@ -6,10 +6,10 @@ exports[`AddGameForm component renders the form as expected 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="game_title"
+    className="AddGameForm__title"
   >
     <label
-      htmlFor="AddGameForm__game_title"
+      htmlFor="title"
     >
       Game title 
       <span
@@ -20,32 +20,17 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     </label>
     <input
       className="Input "
-      id="AddGameForm__game_title"
+      id="title"
       name="title"
       required={true}
       type="text"
     />
   </div>
   <div
-    className="game_cover"
+    className="AddGameForm__description"
   >
     <label
-      htmlFor="AddGameForm__game_cover"
-    >
-      Game cover image url
-    </label>
-    <input
-      className="Input "
-      id="AddGameForm__game_cover"
-      name="game_cover"
-      type="text"
-    />
-  </div>
-  <div
-    className="game_description"
-  >
-    <label
-      htmlFor="AddGameForm__game_description"
+      htmlFor="description"
     >
       Game description 
       <span
@@ -57,7 +42,7 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     <textarea
       aria-label="Write a brief description..."
       className="Textarea "
-      id="AddGameForm__game_description"
+      id="description"
       name="description"
       placeholder="Write a brief description..."
       required={true}
@@ -65,10 +50,10 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     />
   </div>
   <div
-    className="rated"
+    className="AddGameForm__rated"
   >
     <label
-      htmlFor="AddGameForm__rated"
+      htmlFor="rated"
     >
       Rated 
       <span
@@ -79,7 +64,7 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     </label>
     <input
       className="Input "
-      id="AddGameForm__rated"
+      id="rated"
       name="rated"
       placeholder="E, T, M, etc."
       required={true}
@@ -87,10 +72,10 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     />
   </div>
   <div
-    className="platforms"
+    className="AddGameForm__platforms"
   >
     <label
-      htmlFor="AddGameForm__platforms"
+      htmlFor="platforms"
     >
       Platforms 
       <span
@@ -101,24 +86,28 @@ exports[`AddGameForm component renders the form as expected 1`] = `
     </label>
     <input
       className="Input "
-      id="AddGameForm__platforms"
+      id="platforms"
       name="platforms"
       placeholder="Playstation, Xbox, PC, etc."
       required={true}
       type="text"
     />
   </div>
-  <button
-    className="Button "
-    type="submit"
+  <div
+    className="AddGameForm__buttons"
   >
-    Add Game
-  </button>
-  <button
-    className="Button "
-    onClick={[Function]}
-  >
-    Cancel
-  </button>
+    <button
+      className="Button "
+      type="submit"
+    >
+      Add Game
+    </button>
+    <button
+      className="Button "
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
 </form>
 `;

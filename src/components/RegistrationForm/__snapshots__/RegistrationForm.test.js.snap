@@ -71,17 +71,21 @@ exports[`RegistrationForm component renders the form as expected 1`] = `
       type="password"
     />
   </div>
-  <button
-    className="Button "
-    type="submit"
+  <div
+    className="RegistrationForm__buttons"
   >
-    Register
-  </button>
-  <button
-    className="Button "
-    onClick={[Function]}
-  >
-    Cancel
-  </button>
+    <button
+      className="Button "
+      type="submit"
+    >
+      Register
+    </button>
+    <button
+      className="Button "
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
 </form>
 `;

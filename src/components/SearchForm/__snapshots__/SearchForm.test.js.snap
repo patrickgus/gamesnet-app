@@ -2,7 +2,7 @@
 
 exports[`SearchForm component renders the form as expected 1`] = `
 <form
-  className="searchBarNav"
+  className="searchBar"
   onSubmit={[Function]}
 >
   <label

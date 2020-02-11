@@ -15,26 +15,33 @@ exports[`GameListItem component renders the item as expected 1`] = `
       <h2
         className="GameListItem__heading"
       />
+      <img
+        alt="Game cover art for undefined"
+        className="GameListItem__cover"
+      />
     </a>
-    <img
-      alt="Game cover art for undefined"
-    />
-    <h4>
-      Avg Rating: 
-    </h4>
+    <h3>
+      Average Rating: 
+    </h3>
   </header>
   <div
-    className="gameInfo"
+    className="GameListItem__info"
   >
     <h4>
       Description
     </h4>
     <p />
     <p>
-      Rated: 
+      <strong>
+        Rated:
+      </strong>
+       
     </p>
     <p>
-      Platforms: 
+      <strong>
+        Platforms:
+      </strong>
+       
     </p>
   </div>
 </section>

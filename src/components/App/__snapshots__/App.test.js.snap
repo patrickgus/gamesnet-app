@@ -50,9 +50,9 @@ exports[`App component renders the UI as expected 1`] = `
       <div
         className="login"
       >
-        <h3>
-          Log in Here
-        </h3>
+        <h2>
+          Login Here
+        </h2>
         <form
           className="LoginForm"
           onSubmit={[Function]}
