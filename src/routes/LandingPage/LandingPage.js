@@ -7,37 +7,61 @@ export default class LandingPage extends Component {
   render() {
     return (
       <Section className="LandingPage">
-        <div className="login">
-          <h2>Login Here</h2>
+        <div className="LandingPage__login">
           <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-          <div className="demo-user">
+          <div className="LandingPage__demo-user">
             <ul>
               <strong>For Demo:</strong>
               <li>Username: testuser</li>
               <li>Password: Test123!</li>
             </ul>
           </div>
+          <div className="LandingPage__image">
+            <img
+              src="https://ichef.bbci.co.uk/images/ic/704xn/p074mn64.jpg"
+              alt="Retro game console with the words 'Game Over' on the screen"
+            />
+          </div>
         </div>
-        <div className="description">
-          <h3>See game reviews from your own peers</h3>
-          <p>
-            Video games can get quite expensive and some take a significant
-            investment of time to play. Knowing which game to buy can be a
-            challenge because no one likes wasting money on a game they play
-            once and then never touch again. GamesNet is a place where the
-            common player can learn about a game from other players like
-            themselves.
-          </p>
-        </div>
-        <div className="description">
-          <h3>Add any game to get reviewed</h3>
-          <p>
-            From video games to board games, any user will be able to add any
-            kind of game so that it can be rated and reviewed by other users.
-            This is not a official review of a game but rather the opinions of
-            people who have played the game and want to share their experience
-            with others.
-          </p>
+        <div className="LandingPage__descriptions-container">
+          <h2 className="LandingPage__descriptions-header">Welcome to GamesNet</h2>
+          <div className="LandingPage__description">
+            <div className="LandingPage__description-content">
+              <h3>See game reviews from your peers</h3>
+              <p>
+                Video games can get quite expensive and some take a significant
+                investment of time to play. Knowing which game to buy can be a
+                challenge because no one likes wasting money on a game they play
+                once and then never touch again. GamesNet is a place where the
+                common player can learn about a game from other players like
+                themselves.
+              </p>
+            </div>
+            <div className="LandingPage__description-image">
+              <img
+                src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
+                alt="screenshot of GamesNet games list page"
+              />
+            </div>
+          </div>
+          <div className="LandingPage__description">
+            <div className="LandingPage__description-content-2">
+              <h3>Add any game to get reviewed</h3>
+              <p>
+                From video games to board games, any user will be able to add
+                any kind of game so that it can be rated and reviewed by other
+                users. This is not a official review of a game but rather the
+                opinions of people who have played the game and want to share
+                their experience with others.
+              </p>
+            </div>
+            <div className="LandingPage__description-image">
+              <img
+                src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
+                alt="screenshot of GamesNet add-game page"
+              />
+            </div>
+          </div>
         </div>
       </Section>
     );

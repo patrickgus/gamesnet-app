@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import AuthApiService from "../../services/auth-api-service";
 import { Button, Input } from "../Utils/Utils";
+import "./LoginForm.css";
 
 class LoginForm extends Component {
   static defaultProps = {
@@ -34,6 +35,9 @@ class LoginForm extends Component {
     const { error } = this.state;
     return (
       <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
+        <div className="LoginForm__header">
+          <h2>Login Here</h2>
+        </div>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="user_name">
           <label htmlFor="LoginForm__username">Username</label>

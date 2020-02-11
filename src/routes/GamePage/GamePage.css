@@ -30,10 +30,6 @@
   color: rgb(0, 173, 173);
 }
 
-.GamePage__links .Hyph {
-  color: rgb(0, 224, 224);
-}
-
 .GamePage__review-list {
   display: flex;
   flex-direction: column;

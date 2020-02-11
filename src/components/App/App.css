@@ -6,3 +6,16 @@
 .App__header {
   padding: 20px;
 }
+
+@media screen and (min-width: 680px) {
+  .App__header {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: 1048px) {
+  .App__header {
+    padding: 40px;
+  }
+}
+
