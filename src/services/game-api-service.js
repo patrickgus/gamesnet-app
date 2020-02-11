@@ -3,7 +3,7 @@ import config from "../config";
 
 const GameApiService = {
   getGames() {
-    return fetch(`${config.API_ENDPOINT}/games`, {
+    return fetch(`${config.API_BASE_URL}/games`, {
       headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -11,7 +11,7 @@ const GameApiService = {
   },
 
   getGame(gameId) {
-    return fetch(`${config.API_ENDPOINT}/games/${gameId}`, {
+    return fetch(`${config.API_BASE_URL}/games/${gameId}`, {
       headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -19,7 +19,7 @@ const GameApiService = {
   },
 
   getGameReviews(gameId) {
-    return fetch(`${config.API_ENDPOINT}/games/${gameId}/reviews`, {
+    return fetch(`${config.API_BASE_URL}/games/${gameId}/reviews`, {
       headers: { authorization: `bearer ${TokenService.getAuthToken()}` }
     }).then(res =>
       !res.ok ? res.json().then(e => Promise.reject(e)) : res.json()
@@ -27,7 +27,7 @@ const GameApiService = {
   },
 
   postGame(title, description, rated, platforms) {
-    return fetch(`${config.API_ENDPOINT}/games`, {
+    return fetch(`${config.API_BASE_URL}/games`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,7 @@ const GameApiService = {
   },
 
   postReview(gameId, title, rating, review) {
-    return fetch(`${config.API_ENDPOINT}/reviews`, {
+    return fetch(`${config.API_BASE_URL}/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
