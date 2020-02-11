@@ -42,7 +42,6 @@ h3 {
   display: none;
 }
 
-
 .LandingPage__description-image {
   margin: auto;
 }
@@ -107,9 +106,9 @@ h3 {
   }
 }
 
-@media screen and (min-width: 1048px) {
+@media screen and (min-width: 1180px) {
   .LandingPage {
-    margin: 0 300px;
+    margin: 0 150px;
     flex-direction: row-reverse;
   }
 
@@ -123,5 +122,11 @@ h3 {
 
   .LandingPage__image {
     margin: 50px 0;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .LandingPage {
+    margin: 0 300px;
   }
 }
