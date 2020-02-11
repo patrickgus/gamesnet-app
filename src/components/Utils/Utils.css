@@ -25,12 +25,17 @@
 }
 
 .Button {
-  order: 1px solid #aaa;
-  background-color: #eee;
+  background-color: rgb(209, 64, 209);
+  border-color: rgb(182, 108, 182);
   font-size: 1.1em;
   border-radius: 4px;
   padding: 8px 12px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: rgb(168, 52, 168);
 }
 
 .Required {
