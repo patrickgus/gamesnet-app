@@ -11,3 +11,9 @@
 .addGameLink:hover {
   color: rgb(0, 173, 173);
 }
+
+@media screen and (min-width: 1180px) {
+  .addGameLink {
+    font-size: 20px;
+  }
+}
