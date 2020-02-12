@@ -6,6 +6,13 @@ exports[`LoginForm component renders the form as expected 1`] = `
   onSubmit={[Function]}
 >
   <div
+    className="LoginForm__header"
+  >
+    <h2>
+      Login Here
+    </h2>
+  </div>
+  <div
     role="alert"
   />
   <div
