@@ -11,9 +11,3 @@
 .addGameLink:hover {
   color: rgb(0, 173, 173);
 }
-
-@media screen and (min-width: 680px) {
-  .GameList {
-    margin: 0 100px;
-  }
-}

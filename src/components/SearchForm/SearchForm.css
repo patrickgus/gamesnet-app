@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-top: 15px;
+  width: 340px;
   color: rgb(0, 224, 224);
 }
 
@@ -23,7 +24,7 @@
 }
 
 #search {
-  width: 120px;
+  width: 114px;
   border: 1px solid rgb(19, 37, 85);
   border-radius: 4px;
   padding-left: 5px;
@@ -43,6 +44,7 @@
 
 @media screen and (min-width: 680px) {
   .searchBar {
+    margin: 15px auto 0;
     width: 480px;
   }
 

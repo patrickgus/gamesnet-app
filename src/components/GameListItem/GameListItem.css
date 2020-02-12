@@ -3,7 +3,8 @@
   flex-direction: column;
   background-color: rgba(240, 240, 240, 0.6);
   border-radius: 10px;
-  margin: 15px;
+  margin: 15px auto;
+  width: 340px;
   padding: 20px;
 }
 
@@ -59,6 +60,6 @@
 @media screen and (min-width: 680px) {
   .GameListItem {
     width: 480px;
-    margin: 15px 40px;
+    margin: 15px auto;
   }
 }
