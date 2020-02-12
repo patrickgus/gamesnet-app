@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { Section } from "../../components/Utils/Utils";
+import LandingPageImg from "../../images/GamesNet-landingPage-img.jpg";
+import GameListImg from "../../images/GamesNet-gameList.png";
+import AddGameImg from "../../images/GamesNet-addGame.png";
 import "./LandingPage.css";
 
 export default class LandingPage extends Component {
@@ -18,13 +21,15 @@ export default class LandingPage extends Component {
           </div>
           <div className="LandingPage__image">
             <img
-              src="https://ichef.bbci.co.uk/images/ic/704xn/p074mn64.jpg"
+              src={LandingPageImg}
               alt="Retro game console with the words 'Game Over' on the screen"
             />
           </div>
         </div>
         <div className="LandingPage__descriptions-container">
-          <h2 className="LandingPage__descriptions-header">Welcome to GamesNet</h2>
+          <h2 className="LandingPage__descriptions-header">
+            Welcome to GamesNet
+          </h2>
           <div className="LandingPage__description">
             <div className="LandingPage__description-content">
               <h3>See game reviews from your peers</h3>
@@ -39,7 +44,7 @@ export default class LandingPage extends Component {
             </div>
             <div className="LandingPage__description-image">
               <img
-                src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
+                src={GameListImg}
                 alt="screenshot of GamesNet games list page"
               />
             </div>
@@ -57,7 +62,7 @@ export default class LandingPage extends Component {
             </div>
             <div className="LandingPage__description-image">
               <img
-                src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
+                src={AddGameImg}
                 alt="screenshot of GamesNet add-game page"
               />
             </div>
