@@ -8,4 +8,8 @@
     margin: auto;
     width: 480px;
   }
+
+  .AddGame__header h2 {
+    font-size: 30px;
+  }
 }

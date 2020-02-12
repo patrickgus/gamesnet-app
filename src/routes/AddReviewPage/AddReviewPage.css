@@ -1,3 +1,15 @@
-.AddReview__header {
+.AddReview__header h2 {
   color: rgb(234, 0, 255);
+  text-align: center;
+}
+
+@media screen and (min-width: 680px) {
+  .AddReview {
+    margin: auto;
+    width: 480px;
+  }
+
+  .AddReview__header h2 {
+    font-size: 30px;
+  }
 }
