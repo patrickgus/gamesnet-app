@@ -57,6 +57,12 @@
   margin: 8px 0;
 }
 
+@media screen and (max-width: 350px) {
+  .GameListItem {
+    width: auto;
+  }
+}
+
 @media screen and (min-width: 680px) {
   .GameListItem {
     width: 480px;
