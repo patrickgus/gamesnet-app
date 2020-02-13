@@ -1,17 +1,34 @@
 import React, { Component } from "react";
-import LoginForm from "../../components/LoginForm/LoginForm";
+import { Link } from "react-router-dom";
 import { Section } from "../../components/Utils/Utils";
+import TokenService from "../../services/token-service";
+import LoginForm from "../../components/LoginForm/LoginForm";
 import LandingPageImg from "../../images/GamesNet-landingPage-img.jpg";
 import GameListImg from "../../images/GamesNet-gameList.png";
 import AddGameImg from "../../images/GamesNet-addGame.png";
 import "./LandingPage.css";
 
 export default class LandingPage extends Component {
+  renderLoggedIn = () => {
+    return (
+      <div className="logged-in">
+        <h3>You are already logged in</h3>
+        <Link to="/games">To Games</Link>
+      </div>
+    );
+  };
+
+  renderNotLoggedIn = () => {
+    return <LoginForm />;
+  };
+
   render() {
     return (
       <Section className="LandingPage">
         <div className="LandingPage__login">
-          <LoginForm />
+          {TokenService.hasAuthToken()
+            ? this.renderLoggedIn()
+            : this.renderNotLoggedIn()}
           <div className="LandingPage__demo-user">
             <ul>
               <strong>For Demo:</strong>
