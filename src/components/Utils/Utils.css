@@ -18,7 +18,7 @@
 
 .Input::placeholder,
 .Textarea::placeholder {
-  color: rgba(104, 103, 103, 0.75);
+  color: rgba(104, 103, 103, 0.8);
 }
 
 .Textarea {

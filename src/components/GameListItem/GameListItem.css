@@ -1,7 +1,7 @@
 .GameListItem {
   display: flex;
   flex-direction: column;
-  background-color: rgba(240, 240, 240, 0.75);
+  background-color: rgba(240, 240, 240, 0.8);
   border-radius: 10px;
   margin: 15px auto;
   width: 340px;
@@ -36,7 +36,7 @@
 
 .GameListItem__link:hover {
   color: rgb(71, 71, 71);
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .GameListItem__link h2:hover {
