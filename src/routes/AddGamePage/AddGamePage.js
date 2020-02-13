@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Section } from "../../components/Utils/Utils";
 import AddGameForm from "../../components/AddGameForm/AddGameForm";
-import "./AddGamePage.css"
+import "./AddGamePage.css";
 
 export default class AddGamePage extends Component {
   render() {

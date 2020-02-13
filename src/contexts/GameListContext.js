@@ -37,9 +37,9 @@ export class GameListProvider extends Component {
     this.setGame([...this.state.gameList, game]);
   };
 
-  filterGames = (filteredList) => {
-    this.setGameList({ filteredList })
-  }
+  filterGames = filteredList => {
+    this.setGameList({ filteredList });
+  };
 
   render() {
     const value = {

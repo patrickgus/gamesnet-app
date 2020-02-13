@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Section } from "../../components/Utils/Utils";
 import AddReviewForm from "../../components/AddReviewForm/AddReviewForm";
-import "./AddReviewPage.css"
+import "./AddReviewPage.css";
 
 export default class AddReviewPage extends Component {
   render() {
