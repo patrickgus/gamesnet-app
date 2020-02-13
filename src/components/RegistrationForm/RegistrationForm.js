@@ -5,10 +5,6 @@ import { Button, Input, Required } from "../Utils/Utils";
 import "./RegistrationForm.css";
 
 class RegistrationForm extends Component {
-  static defaultProps = {
-    onRegistrationSuccess: () => {}
-  };
-
   state = { error: null };
 
   handleSubmit = ev => {
@@ -25,7 +21,6 @@ class RegistrationForm extends Component {
         fullname.value = "";
         username.value = "";
         password.value = "";
-        this.props.onRegistrationSuccess();
         this.props.history.push("/games");
       })
       .catch(res => {

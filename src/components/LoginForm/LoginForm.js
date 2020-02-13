@@ -5,10 +5,6 @@ import { Button, Input } from "../Utils/Utils";
 import "./LoginForm.css";
 
 class LoginForm extends Component {
-  static defaultProps = {
-    onLoginSuccess: () => {}
-  };
-
   state = { error: null };
 
   handleSubmitJwtAuth = ev => {
@@ -23,7 +19,6 @@ class LoginForm extends Component {
       .then(res => {
         username.value = "";
         password.value = "";
-        this.props.onLoginSuccess();
         this.props.history.push("/games");
       })
       .catch(res => {

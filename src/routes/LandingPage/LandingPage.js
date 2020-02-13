@@ -11,7 +11,7 @@ export default class LandingPage extends Component {
     return (
       <Section className="LandingPage">
         <div className="LandingPage__login">
-          <LoginForm onLoginSuccess={this.handleLoginSuccess} />
+          <LoginForm />
           <div className="LandingPage__demo-user">
             <ul>
               <strong>For Demo:</strong>
