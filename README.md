@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GamesNet
 
-## Available Scripts
+## Summary
 
-In the project directory, you can run:
+GamesNet is an app where users can rate and review video games. Users also add the video games that they want to get reviewed. This gives people a chance to get an opinion of a video game before they decide to buy it. As games are being rated, the game list will update the average rating for each game. The list of games can be sorted alphabetically or by rating from highest to lowest.
 
-### `npm start`
+## Built with:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - React.js
+  - Node.js
+  - Express.js
+  - PostgreSQL
+  - REST API
+  - CSS
+  - HTML
+  - jQuery
+  - Mocha
+  - Chai
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots of the user's journey
 
-### `npm test`
+To demo the app you can use these test user credentials:
+  - username: testuser
+  - password: Test123!
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Or you could make your own user profile if you like. You would just need to supply your full name, a username, and a protected password
+_We do not share any personal information with anyone else._
 
-### `npm run build`
+### Landing Page:
+img
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you click on the 'Register' link in the top, right-hand corner of the page, you will be brought to the Registration Page.
+### Registration Page:
+img
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+If you successfully log in with a correct username and password, you will be brought to the Game List page.
+### Game List Page:
+img
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clicking on 'Add Game' will let you add a new game to the list to be reviewed.
+### Add Game Page:
+img
 
-### `npm run eject`
+Clicking on the title or cover image of a game in the list will bring you to the Game Review Page
+### Game Review Page:
+img
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If you want to add a review, click on the 'Add Review' link and it will take you to the Add Review page
+### Add Review Page:
+img
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Docs
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+GET and POST fetch requests are made via RESTful API.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Base API URL is 'https://limitless-fortress-68165.herokuapp.com/api'
 
-## Learn More
+### Endpoints:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - '/games'
+  - '/reviews'
+  - '/users'
+  - '/auth'
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## What's Next
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  - Add input in AddGame form that allows users to add the cover art for a game
+  - Add Public Forum section where users can ask and answer each others questions
+  
