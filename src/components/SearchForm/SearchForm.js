@@ -11,13 +11,13 @@ class SearchForm extends Component {
 
   static contextType = GameListContext;
 
-  setSearch = val => {
-    this.setState({ searchTerm: val });
-  };
+  // setSearch = val => {
+  //   this.setState({ searchTerm: val });
+  // };
 
-  handleSearch = searchTerm => {
-    this.setSearch(searchTerm);
-  };
+  // handleSearch = searchTerm => {
+  //   this.setSearch(searchTerm);
+  // };
 
   // handleSearch = e => {
   //   this.setState(state => {
@@ -25,52 +25,67 @@ class SearchForm extends Component {
   //   });
   // };
 
+  // handleSearch = e => {
+  //   this.setState({
+  //     searchTerm: e.target.value
+  //   });
+  // };
+
+  handleSearch = e => {
+    this.props.filterList(e.target.value);
+  };
+
+  // handleSort = e => {
+  //   this.setState({
+  //     sort: e.target.value
+  //   });
+  // };
+
   handleSort = e => {
-    this.setState({
-      sort: e.target.value
-    });
+    this.props.sortList(e.target.value);
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { gameList } = this.context;
-    const { sort } = this.state;
+  // handleSubmit = e => {
+  //   e.preventDefault();
+  //   const { gameList } = this.context;
+  //   const { sort, searchTerm } = this.state;
 
-    let filteredList = [];
+  //   let filteredList = [];
 
-    if (this.state.searchTerm !== "") {
-      filteredList = gameList.filter(game => {
-        const title = game.title.toLowerCase();
-        const filter = this.state.searchTerm.toLowerCase();
-        return title.includes(filter);
-      });
-    } else {
-      filteredList = gameList;
-    }
+  //   if (searchTerm !== "") {
+  //     filteredList = gameList.filter(game => {
+  //       const title = game.title.toLowerCase();
+  //       const filter = searchTerm.toLowerCase();
+  //       return title.includes(filter);
+  //     });
+  //   } else {
+  //     filteredList = gameList;
+  //   }
 
-    if (sort === "title") {
-      filteredList.sort((a, b) => {
-        return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
-      });
-    } else if (sort === "avg_rating") {
-      filteredList.sort((a, b) => {
-        return b[sort] - a[sort];
-      });
-    }
-    this.context.setGameList(filteredList);
+  //   if (sort === "title") {
+  //     filteredList.sort((a, b) => {
+  //       return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+  //     });
+  //   } else if (sort === "avg_rating") {
+  //     filteredList.sort((a, b) => {
+  //       return b[sort] - a[sort];
+  //     });
+  //   }
+  //   this.context.setGameList(filteredList);
 
-    this.props.history.push("/games");
-  };
+  //   this.props.history.push("/games");
+  // };
 
   render() {
+    const { sort, searchTerm } = this.state;
     return (
-      <form className="searchBar" onSubmit={this.handleSubmit}>
+      <form className="searchBar">
         <label htmlFor="search">Search: </label>
         <input
           type="text"
           id="search"
           name="search"
-          value={this.state.searchTerm}
+          value={searchTerm}
           onChange={this.handleSearch}
         />
 
@@ -78,7 +93,7 @@ class SearchForm extends Component {
         <select
           id="sort"
           name="sort"
-          value={this.state.sort}
+          value={sort}
           onChange={this.handleSort}
         >
           <option value="title">Title</option>
