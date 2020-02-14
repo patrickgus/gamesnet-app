@@ -19,6 +19,16 @@ export default class GameList extends Component {
     this.setState({
       filtered: this.props.games
     });
+    console.log("props.games", this.props.games);
+    console.log("filtered", this.state.filtered);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.games !== prevProps.games) {
+      this.setState({
+        filtered: this.props.games
+      });
+    }
   }
 
   handleSearch = e => {
@@ -36,7 +46,7 @@ export default class GameList extends Component {
         return title.includes(filter);
       });
     }
-    console.log(newList);
+    console.log("newList", newList);
     this.setState({ filtered: newList });
   };
 
@@ -58,13 +68,11 @@ export default class GameList extends Component {
 
   renderGames() {
     const { filtered } = this.state;
-    console.log("filtered", filtered);
-    return this.filtered.map(game => <GameListItem key={game.id} game={game} />);
+    return filtered.map(game => <GameListItem key={game.id} game={game} />);
   }
 
   render() {
     const { error } = this.context;
-    console.log("props.games", this.props.games);
     return (
       <Section list className="GameList">
         <div className="searchBar">
