@@ -11,11 +11,19 @@ class SearchForm extends Component {
 
   static contextType = GameListContext;
 
-  handleSearch = e => {
-    this.setState({
-      searchTerm: e.target.value
-    });
+  setSearch = val => {
+    this.setState({ searchTerm: val });
   };
+
+  handleSearch = searchTerm => {
+    this.setSearch(searchTerm);
+  };
+
+  // handleSearch = e => {
+  //   this.setState(state => {
+  //     return {searchTerm: state.searchTerm}
+  //   });
+  // };
 
   handleSort = e => {
     this.setState({
