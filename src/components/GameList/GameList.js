@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { Section } from "../Utils/Utils";
-// import GameListContext from "../../contexts/GameListContext";
-// import GameListItem from "../../components/GameListItem/GameListItem";
+import GameListContext from "../../contexts/GameListContext";
+import GameListItem from "../../components/GameListItem/GameListItem";
+import "./GameList.css";
 
 export default class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      filtered: []
+      filtered: [],
+      sort: ""
     };
   }
 
-  // static contextType = GameListContext;
+  static contextType = GameListContext;
 
   componentDidMount() {
     this.setState({
@@ -19,17 +21,13 @@ export default class GameList extends Component {
     });
   }
 
-  // componentWillReceiveProp(nextProps) {
-  //   this.setState({
-  //     filtered: nextProps.games
-  //   });
-  // }
-
-  handleChange = e => {
+  handleSearch = e => {
     let currentList = [];
     let newList = [];
 
-    if (e.target.value !== "") {
+    if (e.target.value === "") {
+      newList = this.props.games;
+    } else {
       currentList = this.props.games;
 
       newList = currentList.filter(game => {
@@ -37,39 +35,57 @@ export default class GameList extends Component {
         const filter = e.target.value.toLowerCase();
         return title.includes(filter);
       });
-    } else {
-      newList = this.props.games;
     }
     console.log(newList);
     this.setState({ filtered: newList });
   };
 
-  // renderGames() {
-  //   const { filtered } = this.state;
-  //   return filtered.map(game => <GameListItem key={game.id} game={game} />);
-  // }
+  handleSort = e => {
+    const { filtered } = this.state;
+    const sort = e.target.value;
+    console.log(sort);
+    if (sort === "title") {
+      filtered.sort((a, b) => {
+        return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+      });
+    } else if (sort === "avg_rating") {
+      filtered.sort((a, b) => {
+        return b[sort] - a[sort];
+      });
+    }
+    this.setState({ sort });
+  };
+
+  renderGames() {
+    const { filtered } = this.state;
+    console.log("filtered", filtered);
+    return this.props.games.map(game => <GameListItem key={game.id} game={game} />);
+  }
 
   render() {
-    // const { error } = this.context;
-    // console.log(this.state.filtered);
+    const { error } = this.context;
+    console.log("props.games", this.props.games);
     return (
       <Section list className="GameList">
-        <input
-          type="text"
-          className="search"
-          onChange={this.handleChange}
-          placeholder="Search..."
-        />
-        {/* {error ? (
+        <div className="searchBar">
+          <label htmlFor="search">Search: </label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            onChange={this.handleSearch}
+          />
+          <label htmlFor="sort">Sort: </label>
+          <select id="sort" name="sort" onChange={this.handleSort}>
+            <option value="title">Title</option>
+            <option value="avg_rating">Rating</option>
+          </select>
+        </div>
+        {error ? (
           <p className="red">There was an error, try again</p>
         ) : (
           this.renderGames()
-        )} */}
-        <ul>
-          {this.state.filtered.map(game => (
-            <li key={game.id}>{game.title}</li>
-          ))}
-        </ul>
+        )}
       </Section>
     );
   }
