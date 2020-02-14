@@ -26,7 +26,6 @@ export default class GameListPage extends Component {
   }
 
   render() {
-    console.log("state.games", this.state.games);
     return (
       <Section className="GameListPage">
         <Link className="addGameLink" to={"/addgame"}>

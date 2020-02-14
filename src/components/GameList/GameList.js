@@ -19,8 +19,6 @@ export default class GameList extends Component {
     this.setState({
       filtered: this.props.games
     });
-    console.log("props.games", this.props.games);
-    console.log("filtered", this.state.filtered);
   }
 
   componentDidUpdate(prevProps) {
@@ -46,14 +44,13 @@ export default class GameList extends Component {
         return title.includes(filter);
       });
     }
-    console.log("newList", newList);
     this.setState({ filtered: newList });
   };
 
   handleSort = e => {
     const { filtered } = this.state;
     const sort = e.target.value;
-    console.log(sort);
+
     if (sort === "title") {
       filtered.sort((a, b) => {
         return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
