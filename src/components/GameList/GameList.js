@@ -59,7 +59,7 @@ export default class GameList extends Component {
   renderGames() {
     const { filtered } = this.state;
     console.log("filtered", filtered);
-    return this.props.games.map(game => <GameListItem key={game.id} game={game} />);
+    return this.filtered.map(game => <GameListItem key={game.id} game={game} />);
   }
 
   render() {
