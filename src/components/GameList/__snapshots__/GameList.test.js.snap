@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameList component renders the form as expected 1`] = `
+<section
+  className="Section Section--list GameList"
+>
+  <div
+    className="searchBar"
+  >
+    <label
+      htmlFor="search"
+    >
+      Search: 
+    </label>
+    <input
+      id="search"
+      name="search"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      htmlFor="sort"
+    >
+      Sort: 
+    </label>
+    <select
+      id="sort"
+      name="sort"
+      onChange={[Function]}
+    >
+      <option
+        value="title"
+      >
+        Title
+      </option>
+      <option
+        value="avg_rating"
+      >
+        Rating
+      </option>
+    </select>
+  </div>
+  <section
+    className="Section GameListItem"
+  >
+    <header
+      className="GameListItem__header"
+    >
+      <a
+        className="GameListItem__link"
+        href="/review/1"
+        onClick={[Function]}
+      >
+        <h2
+          className="GameListItem__heading"
+        >
+          First test game
+        </h2>
+        <img
+          alt="Game cover art for First test game"
+          className="GameListItem__cover"
+          src=""
+        />
+      </a>
+      <h3>
+        Average Rating: 
+        9
+      </h3>
+    </header>
+    <div
+      className="GameListItem__info"
+    >
+      <h4>
+        Description
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet, odio vitae imperdiet finibus, purus nisi tincidunt lorem, feugiat bibendum mi mi sit amet urna. Donec a elementum nunc, sed dapibus augue. Duis volutpat at nisl eget varius. Nam vitae libero auctor, lacinia quam ac, fermentum dolor. Donec arcu neque, faucibus eu porta nec, laoreet sit amet eros.
+      </p>
+      <p>
+        <strong>
+          Rated:
+        </strong>
+         
+        M
+      </p>
+      <p>
+        <strong>
+          Platforms:
+        </strong>
+         
+        Playstaion
+      </p>
+    </div>
+  </section>
+  <section
+    className="Section GameListItem"
+  >
+    <header
+      className="GameListItem__header"
+    >
+      <a
+        className="GameListItem__link"
+        href="/review/2"
+        onClick={[Function]}
+      >
+        <h2
+          className="GameListItem__heading"
+        >
+          Second test game
+        </h2>
+        <img
+          alt="Game cover art for Second test game"
+          className="GameListItem__cover"
+          src=""
+        />
+      </a>
+      <h3>
+        Average Rating: 
+        7
+      </h3>
+    </header>
+    <div
+      className="GameListItem__info"
+    >
+      <h4>
+        Description
+      </h4>
+      <p>
+        Sed pharetra, ante vel aliquet viverra, augue nunc malesuada dui, vel sollicitudin enim sem at urna. Integer pharetra sodales dolor, id accumsan purus aliquam sed. Donec at magna convallis, varius turpis in, elementum eros. Aliquam erat volutpat. Ut at leo eu ligula fermentum fringilla malesuada ut nisl.
+      </p>
+      <p>
+        <strong>
+          Rated:
+        </strong>
+         
+        T
+      </p>
+      <p>
+        <strong>
+          Platforms:
+        </strong>
+         
+        Playstation, Xbox, PC, Mobile
+      </p>
+    </div>
+  </section>
+  <section
+    className="Section GameListItem"
+  >
+    <header
+      className="GameListItem__header"
+    >
+      <a
+        className="GameListItem__link"
+        href="/review/3"
+        onClick={[Function]}
+      >
+        <h2
+          className="GameListItem__heading"
+        >
+          Third test game
+        </h2>
+        <img
+          alt="Game cover art for Third test game"
+          className="GameListItem__cover"
+          src=""
+        />
+      </a>
+      <h3>
+        Average Rating: 
+        8
+      </h3>
+    </header>
+    <div
+      className="GameListItem__info"
+    >
+      <h4>
+        Description
+      </h4>
+      <p>
+        Mauris erat justo, facilisis eget lacus convallis, feugiat luctus massa. Nullam molestie ullamcorper nisl sed posuere. Aliquam erat volutpat. Morbi sed suscipit neque, eu fermentum dolor. Vivamus luctus, eros eu finibus auctor, arcu erat pretium sem, ut tempor mi quam vitae dolor. Mauris feugiat mi in imperdiet commodo.
+      </p>
+      <p>
+        <strong>
+          Rated:
+        </strong>
+         
+        M
+      </p>
+      <p>
+        <strong>
+          Platforms:
+        </strong>
+         
+        Xbox, Windows
+      </p>
+    </div>
+  </section>
+</section>
+`;
