@@ -24,6 +24,12 @@
   width: 75px;
 }
 
+.noResults {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(0, 224, 224);
+}
+
 @media screen and (max-width: 350px) {
   .searchBar {
     width: auto;
@@ -53,5 +59,9 @@
 @media screen and (min-width: 1180px) {
   .searchBar label {
     font-size: 20px;
+  }
+
+  .noResults {
+    font-size: 22px;
   }
 }

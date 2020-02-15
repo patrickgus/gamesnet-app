@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Section } from "../Utils/Utils";
-import GameListContext from "../../contexts/GameListContext";
 import GameListItem from "../../components/GameListItem/GameListItem";
 import "./GameList.css";
 
@@ -12,8 +11,6 @@ export default class GameList extends Component {
       sort: ""
     };
   }
-
-  static contextType = GameListContext;
 
   componentDidMount() {
     this.setState({
@@ -69,7 +66,7 @@ export default class GameList extends Component {
   }
 
   render() {
-    const { error } = this.context;
+    const { filtered } = this.state;
     return (
       <Section list className="GameList">
         <div className="searchBar">
@@ -86,10 +83,10 @@ export default class GameList extends Component {
             <option value="avg_rating">Rating</option>
           </select>
         </div>
-        {error ? (
-          <p className="red">There was an error, try again</p>
-        ) : (
+        {filtered.length ? (
           this.renderGames()
+        ) : (
+          <p className="noResults">No matches found. Please try another search.</p>
         )}
       </Section>
     );
